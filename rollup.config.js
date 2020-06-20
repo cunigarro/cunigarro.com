@@ -21,12 +21,11 @@ export default {
 			dev: !production,
 			// we'll extract any component CSS out into
 			// a separate file - better for performance
+			preprocess: autoPreprocess(),
 			css: css => {
 				css.write('public/build/bundle.css');
-			},
-			preprocess: autoPreprocess()
+			}
 		}),
-
 		// If you have external dependencies installed from
 		// npm, you'll most likely need these plugins. In
 		// some cases you'll need additional configuration -
