@@ -4,6 +4,7 @@ import commonjs from '@rollup/plugin-commonjs';
 import livereload from 'rollup-plugin-livereload';
 import { terser } from 'rollup-plugin-terser';
 import autoPreprocess from 'svelte-preprocess';
+import scss from 'rollup-plugin-scss';
 
 const production = !process.env.ROLLUP_WATCH;
 
@@ -34,6 +35,9 @@ export default {
 		resolve({
 			browser: true,
 			dedupe: ['svelte']
+		}),
+		scss({
+			output: 'public/build/global.css'
 		}),
 		commonjs(),
 
