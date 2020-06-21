@@ -4,9 +4,3 @@
 </script>
 
 <Init></Init>
-
-<style type="text/scss" unscoped>
-  :global(.cover-container) {
-    border: thin solid red;
-  }
-</style>

@@ -1,3 +1,8 @@
+<script>
+  import '../../node_modules/bootstrap/scss/_nav.scss';
+  import '../../node_modules/bootstrap/scss/_navbar.scss';
+</script>
+
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <div class="container-fluid">
     <a class="navbar-brand" href="#">Navbar</a>
@@ -34,5 +39,3 @@
     </div>
   </div>
 </nav>
-
-<style keep></style>
