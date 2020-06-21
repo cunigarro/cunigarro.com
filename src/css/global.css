@@ -1,5 +1,9 @@
 @import "tailwindcss/base";
 
+@import "tailwindcss/components.css";
+
+@import "tailwindcss/utilities";
+
 html,body {
   position: relative;
   width: 100%;
