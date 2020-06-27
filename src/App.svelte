@@ -1,6 +1,6 @@
 <script>
   import Init from './pages/Init.svelte';
-  import './css/global.css';
+  import 'styles.css';
 </script>
 
 <Init></Init>
