@@ -27,11 +27,9 @@ export default {
 				css.write('public/build/bundle.css');
 			}
 		}),
-		resolve(),
 		postcss({
 			modules: true,
 			plugins: [
-				postcssImport(),
 				require('tailwindcss')
 			]
 		}),
