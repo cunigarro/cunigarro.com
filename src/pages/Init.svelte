@@ -1,6 +1,8 @@
 <script>
   import Header from './../components/Header.svelte';
   import Tags from './../components/Tags.svelte';
+  import Accordion from './../components/Accordion.svelte';
+  import SocialNetWorks from './../components/SocialNetWorks.svelte';
 </script>
 
 <div class="init-wrapper flex flex-col">
@@ -38,11 +40,14 @@
       ¿En que va la innovación?
     </h2>
     <img class="w-full h-48 rounded-lg mb-4" src="https://picsum.photos/200/300" alt="">
-    <div class="text-sm">
-    <p>
-      Lorem ipsum, dolor sit amet consectetur adipisicing elit. Veritatis nobis labore autem, corrupti natus blanditiis voluptate voluptates numquam deleniti neque doloremque illum doloribus sunt adipisci possimus accusamus ipsa eius itaque!
-    </p>
+    <div class="text-sm mb-6">
+      <p>
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Veritatis nobis labore autem, corrupti natus blanditiis voluptate voluptates numquam deleniti neque doloremque illum doloribus sunt adipisci possimus accusamus ipsa eius itaque!
+      </p>
     </div>
+    <Accordion></Accordion>
+    <Accordion></Accordion>
+    <SocialNetWorks></SocialNetWorks>
   </div>
 </div>
 
