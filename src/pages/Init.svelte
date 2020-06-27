@@ -1,5 +1,6 @@
 <script>
   import Header from './../components/Header.svelte';
+  import Breadcrumb from './../components/Breadcrumb.svelte';
 </script>
 
 <div class="init-wrapper flex flex-col">
@@ -13,7 +14,7 @@
 </div>
 
 <div class="news-wrapper">
-  Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum, aliquam! Sequi libero adipisci ad aperiam dicta magnam incidunt dolorum recusandae? Natus laboriosam, ad quisquam porro commodi est quia incidunt assumenda.
+  <Breadcrumb></Breadcrumb>
 </div>
 
 <style>
