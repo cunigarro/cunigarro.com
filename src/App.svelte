@@ -12,6 +12,12 @@
   @tailwind utilities;
 
   body {
+    font-size: 16px;
     font-family: 'Montserrat', sans-serif;
+  }
+
+  hr.cu-hr {
+    width: 80px;
+    border-bottom: 3px solid orange;
   }
 </style>
