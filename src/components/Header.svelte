@@ -21,6 +21,10 @@
       </a>
     </div>
   </div>
+
+  <a href="/articulos">
+    Artículos
+  </a>
 </nav>
 
 <style>
