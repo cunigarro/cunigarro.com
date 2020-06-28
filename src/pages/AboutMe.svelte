@@ -2,4 +2,6 @@
   import Header from './../components/Header.svelte';
 </script>
 
-<Header></Header>
+<div class="bg-black">
+  <Header></Header>
+</div>
