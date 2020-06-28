@@ -15,7 +15,10 @@
   <div class="init-wrapper__image-screen absolute z-0 w-full h-full"></div>
 </div>
 
-<div class="container mx-auto px-4 pt-8">
+<div
+  id="blog"
+  class="container mx-auto px-4 pt-8"
+>
   <Tags></Tags>
   <hr class="cu-hr mt-4 mb-6">
   <div class="mb-6">
