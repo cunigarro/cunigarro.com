@@ -3,17 +3,29 @@
   import Tags from './../components/Tags.svelte';
   import Accordion from './../components/Accordion.svelte';
   import SocialNetWorks from './../components/SocialNetWorks.svelte';
+  import Switch from './../components/Switch.svelte';
 
   let articles = [
     {
       name: 'Artículo 1',
       date: 'May 20',
-      category: 'Música'
+      category: 'Web',
+      imageUrl: 'https://picsum.photos/200/300',
+      resume: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Veritatis nobis labore autem, corrupti natus blanditiis voluptate voluptates numquam deleniti neque doloremque...'
     },
     {
       name: 'Artículo 2',
       date: 'Jun 20',
-      category: 'Programación'
+      category: 'IOT',
+      imageUrl: 'https://picsum.photos/200/300',
+      resume: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Veritatis nobis labore autem, corrupti natus blanditiis voluptate voluptates numquam deleniti neque doloremque...'
+    },
+    {
+      name: 'Artículo 3',
+      date: 'Jun 20',
+      category: 'Mobile',
+      imageUrl: 'https://picsum.photos/200/300',
+      resume: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Veritatis nobis labore autem, corrupti natus blanditiis voluptate voluptates numquam deleniti neque doloremque...'
     }
   ]
 </script>
@@ -34,11 +46,9 @@
 >
   <Tags></Tags>
   <hr class="cu-hr mt-4 mb-6">
-  <div class="mb-6">
-    <a href="#responsive-header" class="inline-block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white mr-4">
-      Blog
-    </a>
-    <span class="font-semibold">
+  <div class="flex items-center mb-6">
+    <Switch></Switch>
+    <span class="font-semibold inline-block ml-2">
       Blog
     </span>
   </div>
@@ -47,29 +57,16 @@
     <br>
     de noticias
   </h2>
-  <hr class="mb-4">
-  <div class="article">
-    <p class="text-xs mb-4">
-      Jun 1 - Innovación
-    </p>
-    <h2 class="text-lg mb-4 font-semibold">
-      ¿En que va la innovación?
-    </h2>
-    <img class="w-full h-48 rounded-lg mb-4" src="https://picsum.photos/200/300" alt="">
-    <div class="text-sm mb-6">
-      <p>
-        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Veritatis nobis labore autem, corrupti natus blanditiis voluptate voluptates numquam deleniti neque doloremque illum doloribus sunt adipisci possimus accusamus ipsa eius itaque!
-      </p>
-    </div>
-    {#each articles as article}
-      <Accordion
-        name={article.name}
-        date={article.date}
-        category={article.category}
-      ></Accordion>
-    {/each}
-    <SocialNetWorks></SocialNetWorks>
-  </div>
+  {#each articles as article}
+    <Accordion
+      name={article.name}
+      date={article.date}
+      category={article.category}
+      imageUrl={article.imageUrl}
+      resume={article.resume}
+    ></Accordion>
+  {/each}
+  <SocialNetWorks></SocialNetWorks>
 </div>
 
 <style>
