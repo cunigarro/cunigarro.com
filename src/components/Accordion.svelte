@@ -1,14 +1,23 @@
 <script>
+  import { createEventDispatcher } from 'svelte';
+  const dispatch = createEventDispatcher();
+
+  export let id;
   export let name;
   export let date;
   export let category;
   export let imageUrl;
   export let resume;
-
-  let open = false;
+  export let open = false;
 
   function toggleSection() {
-    open = !open;
+    if (!open) {
+      open = !open;
+      dispatch('opened', {
+        open,
+        id
+      });
+    }
   }
 </script>
 
@@ -20,7 +29,7 @@
     <div class="flex-grow-0">
       <button
         on:click={toggleSection}
-        class="block"
+        class="block {open ? 'cursor-default' : 'cursor-pointer'}"
       >
         {#if open}
           <svg class="w-6 h-6" viewBox="0 0 24 24">

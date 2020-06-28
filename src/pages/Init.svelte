@@ -11,23 +11,32 @@
       date: 'May 20',
       category: 'Web',
       imageUrl: 'https://picsum.photos/200/300',
-      resume: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Veritatis nobis labore autem, corrupti natus blanditiis voluptate voluptates numquam deleniti neque doloremque...'
+      resume: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Veritatis nobis labore autem, corrupti natus blanditiis voluptate voluptates numquam deleniti neque doloremque...',
+      opened: true
     },
     {
       name: 'Artículo 2',
       date: 'Jun 20',
       category: 'IOT',
       imageUrl: 'https://picsum.photos/200/300',
-      resume: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Veritatis nobis labore autem, corrupti natus blanditiis voluptate voluptates numquam deleniti neque doloremque...'
+      resume: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Veritatis nobis labore autem, corrupti natus blanditiis voluptate voluptates numquam deleniti neque doloremque...',
+      opened: false
     },
     {
       name: 'Artículo 3',
       date: 'Jun 20',
       category: 'Mobile',
       imageUrl: 'https://picsum.photos/200/300',
-      resume: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Veritatis nobis labore autem, corrupti natus blanditiis voluptate voluptates numquam deleniti neque doloremque...'
+      resume: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Veritatis nobis labore autem, corrupti natus blanditiis voluptate voluptates numquam deleniti neque doloremque...',
+      opened: false
     }
-  ]
+  ];
+
+  function openArticlesController(event) {
+    articles.forEach((v, i) => {
+      articles[i].opened = event.detail.id == i + 1;
+    });
+  }
 </script>
 
 <div class="init-wrapper flex flex-col">
@@ -57,13 +66,16 @@
     <br>
     de noticias
   </h2>
-  {#each articles as article}
+  {#each articles as article, index}
     <Accordion
+      id={index + 1}
       name={article.name}
       date={article.date}
       category={article.category}
       imageUrl={article.imageUrl}
       resume={article.resume}
+      open={article.opened}
+      on:opened={openArticlesController}
     ></Accordion>
   {/each}
   <SocialNetWorks></SocialNetWorks>
