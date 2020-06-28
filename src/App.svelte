@@ -1,6 +1,7 @@
 <script>
   import Init from './pages/Init.svelte';
   import Articles from './pages/Articles.svelte';
+  import ErrorPage from './pages/ErrorPage.svelte';
   import router from 'page';
 
   let page;
@@ -8,6 +9,7 @@
 
   router('/', () => page = Init);
   router('/articulos', () => page = Articles);
+  router('/*', () => page = ErrorPage);
 
   router.start();
 </script>
