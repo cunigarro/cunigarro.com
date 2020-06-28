@@ -1,7 +1,13 @@
+<script>
+  export let name;
+  export let date;
+  export let category;
+</script>
+
 <div class="border-t py-5">
   <div class="flex mb-1">
     <p class="text-xs flex-grow">
-      May 20 - Música
+      {date} - {category}
     </p>
     <div class="flex-grow-0">
       <button class="-mt-2 block">
@@ -12,6 +18,6 @@
     </div>
   </div>
   <h2 class="text-lg font-semibold">
-    ¿En que va la innovación?
+    {name}
   </h2>
 </div>

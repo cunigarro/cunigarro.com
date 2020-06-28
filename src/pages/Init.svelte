@@ -3,6 +3,19 @@
   import Tags from './../components/Tags.svelte';
   import Accordion from './../components/Accordion.svelte';
   import SocialNetWorks from './../components/SocialNetWorks.svelte';
+
+  let articles = [
+    {
+      name: 'Artículo 1',
+      date: 'May 20',
+      category: 'Música'
+    },
+    {
+      name: 'Artículo 2',
+      date: 'Jun 20',
+      category: 'Programación'
+    }
+  ]
 </script>
 
 <div class="init-wrapper flex flex-col">
@@ -48,8 +61,13 @@
         Lorem ipsum, dolor sit amet consectetur adipisicing elit. Veritatis nobis labore autem, corrupti natus blanditiis voluptate voluptates numquam deleniti neque doloremque illum doloribus sunt adipisci possimus accusamus ipsa eius itaque!
       </p>
     </div>
-    <Accordion></Accordion>
-    <Accordion></Accordion>
+    {#each articles as article}
+      <Accordion
+        name={article.name}
+        date={article.date}
+        category={article.category}
+      ></Accordion>
+    {/each}
     <SocialNetWorks></SocialNetWorks>
   </div>
 </div>
