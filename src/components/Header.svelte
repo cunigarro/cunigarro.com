@@ -1,4 +1,6 @@
 <script>
+  import Switch from './Switch.svelte';
+
   let menuOpened = false;
 
   function toggleMenu() {
@@ -13,16 +15,14 @@
     </a>
   </div>
   <div class="block lg:hidden flex items-center">
-    <button
-      class="bg-transparent hover:bg-transparent text-white hover:text-white py-1 px-4 border border-blue-500 hover:border-transparent rounded mr-3"
-    >
-      toggle icon
-    </button>
+    <Switch></Switch>
     <button
       on:click={toggleMenu}
-      class="flex items-center px-3 py-2 border rounded text-teal-200 border-teal-400 hover:text-white hover:border-white"
+      class="flex items-center ml-2 -mr-4 text-white"
     >
-      <svg class="fill-current h-3 w-3" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><title>Menu</title><path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"/></svg>
+      <svg class="w-10 h-10" viewBox="0 0 24 24">
+        <path fill="currentColor" d="M12,16A2,2 0 0,1 14,18A2,2 0 0,1 12,20A2,2 0 0,1 10,18A2,2 0 0,1 12,16M12,10A2,2 0 0,1 14,12A2,2 0 0,1 12,14A2,2 0 0,1 10,12A2,2 0 0,1 12,10M12,4A2,2 0 0,1 14,6A2,2 0 0,1 12,8A2,2 0 0,1 10,6A2,2 0 0,1 12,4Z" />
+      </svg>
     </button>
   </div>
   <div class="w-full block flex-grow lg:flex lg:items-center lg:w-auto">
