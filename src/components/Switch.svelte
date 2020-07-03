@@ -35,7 +35,7 @@
     content: "";
     height: 14px;
     width: 14px;
-    left: 3px;
+    left: 2px;
     bottom: 2px;
     background-color: white;
     -webkit-transition: 0.4s;
@@ -52,9 +52,9 @@
   }
 
   input:checked + .slider:before {
-    -webkit-transform: translateX(22px);
-    -ms-transform: translateX(22px);
-    transform: translateX(22px);
+    -webkit-transform: translateX(24px);
+    -ms-transform: translateX(24px);
+    transform: translateX(24px);
   }
 </style>
 
