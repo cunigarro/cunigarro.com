@@ -1,10 +1,22 @@
 <script>
   import Switch from './Switch.svelte';
+  import page from 'page';
 
   let menuOpened = false;
 
   function toggleMenu() {
     menuOpened = !menuOpened;
+  }
+
+  function goToBlog() {
+    const blog = document.querySelector('#blog');
+
+    if (blog != null) {
+      const blogTopPos = blog.offsetTop;
+      window.scrollTo(0, blogTopPos);
+    } else {
+      page('/blog');
+    }
   }
 </script>
 
@@ -27,16 +39,16 @@
   </div>
   <div class="w-full block flex-grow lg:flex lg:items-center lg:w-auto">
     {#if menuOpened}
-      <div class="text-sm lg:flex-grow text-right">
-        <a
-          href="#blog"
-          class="block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white"
+      <div class="text-sm lg:flex-grow flex flex-col flex-wrap items-end">
+        <button
+          on:click|preventDefault="{goToBlog}"
+          class="block mt-4 lg:mt-0 text-teal-200 hover:text-white"
         >
           Blog
-        </a>
+        </button>
         <a
           href="/acerca-de-mi"
-          class="block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white"
+          class="block mt-4 lg:mt-0 text-teal-200 hover:text-white"
         >
           Acerca de mi
         </a>

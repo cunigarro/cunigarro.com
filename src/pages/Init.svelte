@@ -1,4 +1,6 @@
 <script>
+  import { onMount } from 'svelte';
+
   import Header from './../components/Header.svelte';
   import Tags from './../components/Tags.svelte';
   import Accordion from './../components/Accordion.svelte';
@@ -37,6 +39,14 @@
       articles[i].opened = event.detail.id == i + 1;
     });
   }
+
+  onMount(() => {
+    if (window.location.pathname == '/blog') {
+      const blog = document.querySelector('#blog');
+      const blogTopPos = blog.offsetTop;
+      window.scrollTo(0, blogTopPos);
+    }
+  });
 </script>
 
 <div class="init-wrapper flex flex-col">

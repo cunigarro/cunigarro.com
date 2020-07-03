@@ -9,6 +9,7 @@
   let params;
 
   router('/', () => page = Init);
+  router('/blog', () => page = Init);
   router('/articulos', () => page = Articles);
   router('/acerca-de-mi', () => page = AboutMe);
   router('/*', () => page = ErrorPage);
