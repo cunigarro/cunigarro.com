@@ -6,33 +6,11 @@
   import Accordion from './../components/Accordion.svelte';
   import Footer from './../components/Footer.svelte';
   import Switch from './../components/Switch.svelte';
+  import { DateTime } from 'luxon';
 
-  let articles = [
-    {
-      name: 'Artículo 1',
-      date: 'May 20',
-      category: 'Web',
-      imageUrl: 'https://picsum.photos/200/300',
-      resume: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Veritatis nobis labore autem, corrupti natus blanditiis voluptate voluptates numquam deleniti neque doloremque...',
-      opened: true
-    },
-    {
-      name: 'Artículo 2',
-      date: 'Jun 20',
-      category: 'IOT',
-      imageUrl: 'https://picsum.photos/200/300',
-      resume: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Veritatis nobis labore autem, corrupti natus blanditiis voluptate voluptates numquam deleniti neque doloremque...',
-      opened: false
-    },
-    {
-      name: 'Artículo 3',
-      date: 'Jun 20',
-      category: 'Mobile',
-      imageUrl: 'https://picsum.photos/200/300',
-      resume: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Veritatis nobis labore autem, corrupti natus blanditiis voluptate voluptates numquam deleniti neque doloremque...',
-      opened: false
-    }
-  ];
+  import getArticlesData from './../services/contentfulApi.js';
+
+  let articles = [];
 
   function openArticlesController(event) {
     articles.forEach((v, i) => {
@@ -46,6 +24,19 @@
       const blogTopPos = blog.offsetTop;
       window.scrollTo(0, blogTopPos);
     }
+
+    getArticlesData().then(data => {
+      DateTime.local().setLocale('es-CO');
+
+      articles = data.items.map(item => ({
+        name: item.fields.title,
+        date: DateTime.fromISO(item.fields.publishDate, {setZone: true}).toLocaleString({month: 'long', day: '2-digit'}),
+        category: 'Web',
+        imageUrl: 'https://picsum.photos/200/300',
+        resume: item.fields.description,
+        opened: true
+      }));
+    });
   });
 </script>
 
