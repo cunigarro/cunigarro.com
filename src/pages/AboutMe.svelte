@@ -1,7 +1,7 @@
 <script>
   import Header from './../components/Header.svelte';
   import Switch from './../components/Switch.svelte';
-  import SocialNetWorks from './../components/SocialNetWorks.svelte';
+  import Footer from './../components/Footer.svelte';
 </script>
 
 <div class="about-me-wrapper flex flex-col">
@@ -31,7 +31,7 @@
       Lorem, ipsum dolor sit amet consectetur adipisicing elit. Natus neque perferendis, dolorum saepe ipsum hic fugiat corrupti, ipsa atque molestiae, nulla recusandae corporis deleniti omnis aperiam vitae accusamus nesciunt. Corrupti?
     </p>
   </div>
-  <SocialNetWorks></SocialNetWorks>
+  <Footer></Footer>
 </div>
 
 <style>

@@ -4,7 +4,7 @@
   import Header from './../components/Header.svelte';
   import Tags from './../components/Tags.svelte';
   import Accordion from './../components/Accordion.svelte';
-  import SocialNetWorks from './../components/SocialNetWorks.svelte';
+  import Footer from './../components/Footer.svelte';
   import Switch from './../components/Switch.svelte';
 
   let articles = [
@@ -88,7 +88,7 @@
       on:opened={openArticlesController}
     ></Accordion>
   {/each}
-  <SocialNetWorks></SocialNetWorks>
+  <Footer></Footer>
 </div>
 
 <style>
