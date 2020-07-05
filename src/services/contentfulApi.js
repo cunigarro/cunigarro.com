@@ -5,16 +5,31 @@ const headers = new Headers({
   'Authorization': `Bearer ${environment.ctfulDeliveryApiKey}`
 });
 
-const getEntriesUrl = `${environment.ctfulDeliveryApiUrl}/spaces/${environment.ctfulSpaceId}/environments/${environment.ctfulEnv}/entries`;
+const getArticlesUrl = `${environment.ctfulDeliveryApiUrl}/spaces/${environment.ctfulSpaceId}/environments/${environment.ctfulEnv}/entries`;
 
-export default function getArticlesData() {
-  return fetch(getEntriesUrl, {
+function getArticlesData() {
+  return fetch(getArticlesUrl, {
     method: 'GET',
     headers
   }).then(resp => {
     return resp.json();
   }).then(resp => {
-    console.log(resp);
     return resp;
-  })
+  });
+}
+
+function getArticleData(articleId) {
+  return fetch(`${getArticlesUrl}/${articleId}`, {
+    method: 'GET',
+    headers
+  }).then(resp => {
+    return resp.json();
+  }).then(resp => {
+    return resp;
+  });
+}
+
+export {
+  getArticlesData,
+  getArticleData
 }

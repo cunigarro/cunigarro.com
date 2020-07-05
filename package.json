@@ -30,6 +30,7 @@
     "luxon": "^1.24.1",
     "page": "^1.11.6",
     "rollup-plugin-purgecss": "^1.0.0",
+    "showdown": "^1.9.1",
     "sirv-cli": "^0.4.4",
     "svelte-routing": "^1.4.2"
   }

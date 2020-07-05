@@ -1,6 +1,6 @@
 <script>
   import Init from './pages/Init.svelte';
-  import Articles from './pages/Articles.svelte';
+  import Article from './pages/Article.svelte';
   import ErrorPage from './pages/ErrorPage.svelte';
   import AboutMe from './pages/AboutMe.svelte';
   import router from 'page';
@@ -10,7 +10,14 @@
 
   router('/', () => page = Init);
   router('/blog', () => page = Init);
-  router('/articulos', () => page = Articles);
+  router(
+    '/articulo/:id',
+    (ctx, next) => {
+      params = ctx.params
+      next()
+    },
+    () => page = Article
+  );
   router('/acerca-de-mi', () => page = AboutMe);
   router('/*', () => page = ErrorPage);
 

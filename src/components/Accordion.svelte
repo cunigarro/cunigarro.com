@@ -3,6 +3,7 @@
   const dispatch = createEventDispatcher();
 
   export let id;
+  export let articleId;
   export let name;
   export let date;
   export let category;
@@ -51,8 +52,13 @@
 
   {#if open}
     <img class="w-full h-48 rounded-lg mb-4" src={imageUrl} alt="">
-    <p class="text-sm mb-0">
+    <p class="text-sm mb-3">
       {resume}
+    </p>
+    <p class="mb-0 text-sm">
+      <a href="/articulo/{articleId}">
+        Ir a artículo
+      </a>
     </p>
   {/if}
 </div>
