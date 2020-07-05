@@ -7,7 +7,6 @@
   import Footer from './../components/Footer.svelte';
   import Switch from './../components/Switch.svelte';
   import { DateTime } from 'luxon';
-  import showdown from 'showdown';
 
   import { getArticlesData } from './../services/contentfulApi.js';
 
@@ -28,8 +27,6 @@
 
     getArticlesData().then(data => {
       DateTime.local().setLocale('es-CO');
-      /* const converter = new showdown.Converter();
-      converter.makeHtml('# Hola mundo'); */
 
       articles = data.items.map((item, i) => ({
         name: item.fields.title,
