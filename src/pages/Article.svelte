@@ -21,7 +21,7 @@
   });
 </script>
 
-<div class="about-me-wrapper flex flex-col">
+<div class="article-wrapper flex flex-col">
   <Header></Header>
 </div>
 
@@ -37,7 +37,7 @@
       {article.fields.title}
     {/if}
   </h2>
-  <div class="-mb-3">
+  <div class="-mb-3 article text-sm">
     {#if article.fields}
       {@html article.fields.body}
     {/if}
@@ -46,13 +46,22 @@
 </div>
 
 <style>
-  .about-me-wrapper {
+  .article-wrapper {
     background: url(https://picsum.photos/200/300);
     background-size: cover;
     height: 50vh;
   }
 
-  .about-me-wrapper__image-screen {
-    background-color: rgba(0, 0, 0, .5);
+  :global(.article p) {
+    margin-bottom: .75rem;
+  }
+
+  :global(.article ul) {
+    list-style-type: disc;
+    list-style-position: inside;
+  }
+
+  :global(.article ul li) {
+    margin-bottom: .75rem;
   }
 </style>
