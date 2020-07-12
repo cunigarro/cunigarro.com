@@ -20,13 +20,12 @@
     });
   });
 </script>
-
-<div class="article-wrapper flex flex-col">
+<div class="container px-4 mx-auto">
   <Header></Header>
-</div>
 
-<div class="container mx-auto px-4 pt-8">
-  <div class="flex items-center mb-6">
+  <hr class="border-t mb-5">
+
+  <div class="flex items-center mb-6 block md:hidden">
     <Switch></Switch>
     <span class="font-semibold inline-block ml-2">
       Blog
@@ -37,21 +36,33 @@
       {article.fields.title}
     {/if}
   </h2>
-  <div class="-mb-3 article text-sm">
-    {#if article.fields}
-      {@html article.fields.body}
-    {/if}
+  <img class="w-full h-48 mb-4 object-cover mb-6" src="https://picsum.photos/200/300" alt="">
+  <div class="grid-cols-12 hidden md:grid">
+    <div class="col-span-12 md:col-span-4 xl:col-span-3 text-sm">
+      Jun 1 - por Christian Unigarro
+      <br>
+      Innovación
+    </div>
   </div>
-  <Footer></Footer>
+
+  <div  class="grid grid-cols-12 items-center">
+    <div class="col-span-12 md:col-span-4 xl:col-span-3">
+      <Footer class="hidden md:block"></Footer>
+    </div>
+    <div class="col-span-12 md:col-span-8 xl:col-span-9">
+      <div class="-mb-3 article text-sm md:text-base pb-0 md:pb-8">
+        {#if article.fields}
+          {@html article.fields.body}
+        {/if}
+      </div>
+      <div class="block md:hidden">
+        <Footer></Footer>
+      </div>
+    </div>
+  </div>
 </div>
 
 <style>
-  .article-wrapper {
-    background: url(https://picsum.photos/200/300);
-    background-size: cover;
-    height: 50vh;
-  }
-
   :global(.article p) {
     margin-bottom: .75rem;
   }
