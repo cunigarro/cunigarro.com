@@ -1,4 +1,5 @@
 <script>
+  import { onMount } from 'svelte';
   import Switch from './Switch.svelte';
   import page from 'page';
 
@@ -18,6 +19,13 @@
       page('/blog');
     }
   }
+
+  onMount(() => {
+    console.log(window.outerWidth);
+    if (window.outerWidth >= 768 ) {
+      menuOpened = true;
+    }
+  });
 </script>
 
 <nav class="flex items-center justify-between flex-wrap p-6 relative z-10">
@@ -26,7 +34,7 @@
       Cunigarro
     </a>
   </div>
-  <div class="block lg:hidden flex items-center">
+  <div class="block md:hidden flex items-center">
     <Switch></Switch>
     <button
       on:click={toggleMenu}
@@ -37,18 +45,18 @@
       </svg>
     </button>
   </div>
-  <div class="w-full block flex-grow lg:flex lg:items-center lg:w-auto">
+  <div class="w-full md:w-auto block md:flex flex-grow lg:items-center">
     {#if menuOpened}
-      <div class="text-sm lg:flex-grow flex flex-col flex-wrap items-end">
+      <div class="text-sm flex-grow flex flex-col md:flex-row flex-no-wrap md:flex-wrap items-end justify-end">
         <button
           on:click|preventDefault="{goToBlog}"
-          class="block mt-4 lg:mt-0 text-teal-200 hover:text-white"
+          class="block mt-4 md:mt-0 text-teal-200 hover:text-white order-first md:order-last ml-0 md:ml-3"
         >
           Blog
         </button>
         <a
           href="/acerca-de-mi"
-          class="block mt-4 lg:mt-0 text-teal-200 hover:text-white"
+          class="block mt-4 md:mt-0 text-teal-200 hover:text-white"
         >
           Acerca de mi
         </a>

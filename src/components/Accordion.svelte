@@ -51,11 +51,11 @@
   </h2>
 
   {#if open}
-    <img class="w-full h-48 rounded-lg mb-4" src={imageUrl} alt="">
+    <img class="w-full h-48 rounded-lg mb-4 object-cover" src={imageUrl} alt="">
     <p class="text-sm mb-3">
       {resume}
     </p>
-    <p class="mb-0 text-sm">
+    <p class="mb-0 text-sm text-right">
       <a href="/articulo/{articleId}">
         Ir a artículo
       </a>
