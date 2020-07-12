@@ -69,7 +69,7 @@
   <Tags></Tags>
   <hr class="cu-hr mt-4 mb-6">
 
-  <div class="grid grid-cols-12 items-start">
+  <div class="grid grid-cols-12">
     <div class="mb-6 col-span-12 md:col-span-4 xl:col-span-3">
       <div class="flex items-center mb-6">
         <Switch></Switch>
