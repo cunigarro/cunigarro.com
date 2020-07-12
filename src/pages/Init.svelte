@@ -49,7 +49,7 @@
   <div class="container mx-auto h-screen z-10 relative flex flex-col">
     <Header></Header>
     <div class="flex flex-grow items-center px-6 d sm:px-20 justify-center sm:justify-start">
-      <h1 class="font-thin leading-none text-5xl sm:text-6xl text-white mb-32 tracking-tighter">
+      <h1 class="font-thin leading-none text-5xl sm:text-6xl text-white mb-40 tracking-tighter">
         Christian
         <br>
         Unigarro
