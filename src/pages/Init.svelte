@@ -83,8 +83,10 @@
         de noticias
       </h2>
     </div>
+  </div>
 
-    <div class="col-span-12 md:col-span-8 xl:col-span-9 pt-0 md:pt-32">
+  <div  class="grid grid-cols-12">
+    <div class="col-start-1 md:col-start-5 xl:col-start-4 col-end-13">
       {#each articles as article, index}
         <Accordion
           id={index + 1}
