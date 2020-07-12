@@ -29,16 +29,16 @@
 </script>
 
 <nav class="flex items-center justify-between flex-wrap p-6 relative z-10">
-  <div class="flex items-center flex-shrink-0 text-white mr-6">
+  <div class="flex items-center flex-shrink-0 text-white mr-6 order-first">
     <a href="/">
       Cunigarro
     </a>
   </div>
-  <div class="block md:hidden flex items-center">
+  <div class="flex items-center order-first md:order-last">
     <Switch></Switch>
     <button
       on:click={toggleMenu}
-      class="flex items-center ml-2 -mr-4 text-white"
+      class="flex items-center ml-2 -mr-4 text-white block md:hidden"
     >
       <svg class="w-8 h-8" viewBox="0 0 24 24">
         <path fill="currentColor" d="M12,16A2,2 0 0,1 14,18A2,2 0 0,1 12,20A2,2 0 0,1 10,18A2,2 0 0,1 12,16M12,10A2,2 0 0,1 14,12A2,2 0 0,1 12,14A2,2 0 0,1 10,12A2,2 0 0,1 12,10M12,4A2,2 0 0,1 14,6A2,2 0 0,1 12,8A2,2 0 0,1 10,6A2,2 0 0,1 12,4Z" />
@@ -50,7 +50,7 @@
       <div class="text-sm flex-grow flex flex-col md:flex-row flex-no-wrap md:flex-wrap items-end justify-end">
         <button
           on:click|preventDefault="{goToBlog}"
-          class="block mt-4 md:mt-0 text-teal-200 hover:text-white order-first md:order-last ml-0 md:ml-3"
+          class="block mt-4 md:mt-0 text-teal-200 hover:text-white order-first md:order-last mx-0 md:mx-8"
         >
           Blog
         </button>
