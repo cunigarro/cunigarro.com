@@ -6,6 +6,8 @@
   import Accordion from './../components/Accordion.svelte';
   import Footer from './../components/Footer.svelte';
   import Switch from './../components/Switch.svelte';
+
+  import { mdiCheckboxBlankCircle } from '@mdi/js';
   import { DateTime } from 'luxon';
 
   import { getArticlesData } from './../services/contentfulApi.js';
@@ -43,14 +45,21 @@
   });
 </script>
 
-<div class="init-wrapper flex flex-col">
-  <Header></Header>
-  <div class="flex flex-grow items-center justify-center text-2xl pb-16 z-10 text-white">
-    Christian
-    <br>
-    Unigarro.
+<div class="init-wrapper">
+  <div class="container mx-auto h-screen z-10 relative flex flex-col">
+    <Header></Header>
+    <div class="flex flex-grow items-center px-6 d sm:px-20 justify-center sm:justify-start">
+      <h1 class="font-thin leading-none text-5xl sm:text-6xl text-white mb-32 tracking-tighter">
+        Christian
+        <br>
+        Unigarro
+        <svg class="w-2 h-2 sm:w-3 sm:h-3 inline -mb-5 sm:-mb-6 -ml-2 sm:-ml-3 text-white fill-current" viewBox="0 0 24 24">
+          <path d={mdiCheckboxBlankCircle} />
+        </svg>
+      </h1>
+    </div>
   </div>
-  <div class="init-wrapper__image-screen absolute z-0 w-full h-full"></div>
+  <div class="init-wrapper__image-screen absolute z-0 w-full h-full top-0"></div>
 </div>
 
 <div
