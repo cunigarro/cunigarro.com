@@ -68,31 +68,39 @@
 >
   <Tags></Tags>
   <hr class="cu-hr mt-4 mb-6">
-  <div class="flex items-center mb-6">
-    <Switch></Switch>
-    <span class="font-semibold inline-block ml-2">
-      Blog
-    </span>
+
+  <div class="grid grid-cols-12 items-start">
+    <div class="mb-6 col-span-12 md:col-span-4 xl:col-span-3">
+      <div class="flex items-center mb-6">
+        <Switch></Switch>
+        <span class="font-semibold inline-block ml-2">
+          Blog
+        </span>
+      </div>
+      <h2 class="text-2xl font-semibold leading-none">
+        Este es mi blog
+        <br>
+        de noticias
+      </h2>
+    </div>
+
+    <div class="col-span-12 md:col-span-8 xl:col-span-9 pt-0 md:pt-32">
+      {#each articles as article, index}
+        <Accordion
+          id={index + 1}
+          name={article.name}
+          date={article.date}
+          category={article.category}
+          imageUrl={article.imageUrl}
+          resume={article.resume}
+          open={article.opened}
+          articleId={article.articleId}
+          on:opened={openArticlesController}
+        ></Accordion>
+      {/each}
+      <Footer></Footer>
+    </div>
   </div>
-  <h2 class="text-2xl font-semibold leading-none mb-6">
-    Este es mi blog
-    <br>
-    de noticias
-  </h2>
-  {#each articles as article, index}
-    <Accordion
-      id={index + 1}
-      name={article.name}
-      date={article.date}
-      category={article.category}
-      imageUrl={article.imageUrl}
-      resume={article.resume}
-      open={article.opened}
-      articleId={article.articleId}
-      on:opened={openArticlesController}
-    ></Accordion>
-  {/each}
-  <Footer></Footer>
 </div>
 
 <style>
