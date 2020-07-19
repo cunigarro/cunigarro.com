@@ -46,8 +46,8 @@
   </div>
 
   <div  class="grid grid-cols-12 items-center">
-    <div class="col-span-12 md:col-span-4 xl:col-span-3">
-      <Footer class="hidden md:block"></Footer>
+    <div class="col-span-12 md:col-span-4 xl:col-span-3 hidden md:block">
+      <Footer></Footer>
     </div>
     <div class="col-span-12 md:col-span-8 xl:col-span-9">
       <div class="-mb-3 article text-sm md:text-base pb-0 md:pb-8">
