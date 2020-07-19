@@ -42,4 +42,10 @@
     width: 80px;
     border-bottom: 3px solid orange;
   }
+
+  @media screen and (min-width: 540px) {
+    hr.cu-hr {
+      width: 115px;
+    }
+  }
 </style>
