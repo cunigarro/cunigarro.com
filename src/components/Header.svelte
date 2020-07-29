@@ -28,7 +28,7 @@
   });
 </script>
 
-<nav class="flex items-center justify-between flex-wrap px-6 py-6 md:py-12 xl:py-16 relative z-10">
+<nav class="flex items-center justify-between flex-wrap px-4 py-6 md:py-12 xl:py-16 relative z-10">
   <div class="flex items-center flex-shrink-0 text-white mr-6 order-first">
     <a href="/">
       Cunigarro
