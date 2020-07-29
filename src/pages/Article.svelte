@@ -36,7 +36,7 @@
       {article.fields.title}
     {/if}
   </h2>
-  <img class="w-full h-48 mb-4 object-cover mb-6" src="https://picsum.photos/200/300" alt="">
+  <img class="w-full h-48 mb-4 object-cover mb-6 rounded-lg lg:rounded-none" src="https://picsum.photos/200/300" alt="">
   <div class="grid-cols-12 hidden md:grid">
     <div class="col-span-12 md:col-span-4 xl:col-span-3 text-sm">
       Jun 1 - por Christian Unigarro
