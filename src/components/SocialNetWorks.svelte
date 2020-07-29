@@ -9,21 +9,21 @@
 </script>
 
 <div class="py-8 flex justify-center {!iconsCentered ? 'md:justify-start' : ''}">
-  <a href="">
+  <a class="text-gray-700" href="">
     <svg class="w-8 h-8 mx-2" viewBox="0 0 24 24">
-      <path fill="#000000" d={mdiInstagram} />
+      <path fill="currentColor" d={mdiInstagram} />
     </svg>
   </a>
 
-  <a href="">
+  <a class="text-gray-700" href="">
     <svg class="w-8 h-8 mx-2" viewBox="0 0 24 24">
-      <path fill="#000000" d={mdiTwitter} />
+      <path fill="currentColor" d={mdiTwitter} />
     </svg>
   </a>
 
-  <a href="">
+  <a class="text-gray-700" href="">
     <svg class="w-8 h-8 mx-2" viewBox="0 0 24 24">
-      <path fill="#000000" d={mdiLinkedin} />
+      <path fill="currentColor" d={mdiLinkedin} />
     </svg>
   </a>
 </div>
