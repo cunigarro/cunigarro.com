@@ -1,4 +1,6 @@
 <script>
+  export let iconsCentered = false;
+
   import {
     mdiInstagram,
     mdiTwitter,
@@ -6,7 +8,7 @@
   } from '@mdi/js';
 </script>
 
-<div class="py-8 flex justify-center md:justify-start">
+<div class="py-8 flex justify-center {!iconsCentered ? 'md:justify-start' : ''}">
   <a href="">
     <svg class="w-8 h-8 mx-2" viewBox="0 0 24 24">
       <path fill="#000000" d={mdiInstagram} />

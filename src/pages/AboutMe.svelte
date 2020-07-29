@@ -25,11 +25,19 @@
 </div>
 
 <div class="container mx-auto px-4">
-  <div class="grid-cols-12 hidden md:grid">
+  <div class="grid-cols-12 md:grid">
     <div class="col-span-12 md:col-span-4 xl:col-span-3 text-sm">
-      Jun 1 - por Christian Unigarro
-      <br>
-      Innovación
+      <div class="flex items-center mb-6">
+        <Switch></Switch>
+        <span class="font-semibold inline-block ml-2">
+          Acerca de mi
+        </span>
+      </div>
+      <h2 class="text-2xl font-semibold leading-none mb-10 md:mb-16">
+        Hola
+        <br>
+        soy Christian
+      </h2>
     </div>
   </div>
 
@@ -54,30 +62,6 @@
       </div>
     </div>
   </div>
-
-  <!-- <div class="flex items-center mb-6">
-    <Switch></Switch>
-    <span class="font-semibold inline-block ml-2">
-      Acerca de mi
-    </span>
-  </div>
-  <h2 class="text-2xl font-semibold leading-none mb-6">
-    Hola
-    <br>
-    soy Christian
-  </h2>
-  <div class="-mb-3">
-    <p class="text-sm mb-3">
-      Lorem, ipsum dolor sit amet consectetur adipisicing elit. Natus neque perferendis, dolorum saepe ipsum hic fugiat corrupti, ipsa atque molestiae, nulla recusandae corporis deleniti omnis aperiam vitae accusamus nesciunt. Corrupti?
-    </p>
-    <p class="text-sm mb-3">
-      Lorem, ipsum dolor sit amet consectetur adipisicing elit. Natus neque perferendis, dolorum saepe ipsum hic fugiat corrupti, ipsa atque molestiae, nulla recusandae corporis deleniti omnis aperiam vitae accusamus nesciunt. Corrupti?
-    </p>
-    <p class="text-sm mb-3">
-      Lorem, ipsum dolor sit amet consectetur adipisicing elit. Natus neque perferendis, dolorum saepe ipsum hic fugiat corrupti, ipsa atque molestiae, nulla recusandae corporis deleniti omnis aperiam vitae accusamus nesciunt. Corrupti?
-    </p>
-  </div>
-  <Footer></Footer> -->
 </div>
 
 <style>

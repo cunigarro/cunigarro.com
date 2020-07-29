@@ -100,7 +100,7 @@
           on:opened={openArticlesController}
         ></Accordion>
       {/each}
-      <Footer></Footer>
+      <Footer iconsCentered={true}></Footer>
     </div>
   </div>
 </div>
