@@ -40,7 +40,8 @@
 
   hr.cu-hr {
     width: 80px;
-    border-bottom: 3px solid orange;
+    border-bottom: 2px solid orange;
+    border-top: 0;
   }
 
   @media screen and (min-width: 540px) {

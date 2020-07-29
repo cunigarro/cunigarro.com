@@ -2,12 +2,24 @@
   import Header from './../components/Header.svelte';
   import Switch from './../components/Switch.svelte';
   import Footer from './../components/Footer.svelte';
+  import { mdiCheckboxBlankCircle } from '@mdi/js';
 </script>
 
-<div class="about-me-wrapper mb-5">
-  <div class="container mx-auto flex flex-col">
+<div class="about-me-wrapper mx-auto flex flex-col mb-5">
+  <div class="container flex-grow flex flex-col flex-grow mx-auto z-10">
     <Header></Header>
-    <hr class="hidden md:block border-t mb-0">
+    <div class="flex sm:hidden flex-grow mb-16 items-center px-6 d sm:px-20 justify-center sm:justify-start">
+      <h1 class="font-thin leading-none text-5xl sm:text-6xl text-white tracking-tighter">
+        Christian
+        <br>
+        Unigarro
+        <svg class="w-2 h-2 sm:w-3 sm:h-3 inline -mb-5 sm:-mb-6 -ml-2 sm:-ml-3 text-white fill-current" viewBox="0 0 24 24">
+          <path d={mdiCheckboxBlankCircle} />
+        </svg>
+        <hr class="cu-hr w-20 mt-4">
+      </h1>
+    </div>
+    <hr class="hidden sm:block border-t mb-0">
   </div>
   <div class="about-me-wrapper__image-screen absolute z-0 w-full h-full top-0"></div>
 </div>
@@ -80,7 +92,7 @@
     background-color: rgba(0, 0, 0, .5);
   }
 
-  @media screen and (min-width: 720px) {
+  @media screen and (min-width: 540px) {
     .about-me-wrapper {
       background: transparent;
       height: auto;

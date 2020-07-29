@@ -56,6 +56,7 @@
         <svg class="w-2 h-2 sm:w-3 sm:h-3 inline -mb-5 sm:-mb-6 -ml-2 sm:-ml-3 text-white fill-current" viewBox="0 0 24 24">
           <path d={mdiCheckboxBlankCircle} />
         </svg>
+        <hr class="cu-hr w-20 mt-4">
       </h1>
     </div>
   </div>
