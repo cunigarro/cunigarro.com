@@ -4,8 +4,12 @@
   import Footer from './../components/Footer.svelte';
 </script>
 
-<div class="about-me-wrapper flex flex-col">
-  <Header></Header>
+<div class="about-me-wrapper">
+  <div class="container mx-auto flex flex-col">
+    <Header></Header>
+    <hr class="hidden md:block border-t mb-5">
+  </div>
+  <div class="about-me-wrapper__image-screen absolute z-0 w-full h-full top-0"></div>
 </div>
 
 <div class="container mx-auto px-4 pt-8">
@@ -39,9 +43,21 @@
     background: url(https://picsum.photos/200/300);
     background-size: cover;
     height: 50vh;
+    position: relative;
   }
 
   .about-me-wrapper__image-screen {
     background-color: rgba(0, 0, 0, .5);
+  }
+
+  @media screen and (min-width: 720px) {
+    .about-me-wrapper {
+      background: transparent;
+      height: auto;
+    }
+
+    .about-me-wrapper__image-screen {
+      background-color: transparent;
+    }
   }
 </style>
