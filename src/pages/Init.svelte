@@ -10,6 +10,7 @@
   import { mdiCheckboxBlankCircle } from '@mdi/js';
   import { DateTime } from 'luxon';
   import { getArticlesData } from './../services/contentfulApi.js';
+  import page from 'page';
 
   let articles = [];
   let darkThemeChecked = false;
@@ -25,11 +26,16 @@
   }
 
   onMount(() => {
-    if (window.location.pathname == '/blog') {
-      const blog = document.querySelector('#blog');
-      const blogTopPos = blog.offsetTop;
-      window.scrollTo(0, blogTopPos);
-    }
+    setTimeout(() => {
+      if (page.current == '/blog') {
+        const blog = document.querySelector('#blog');
+        const blogTopPos = blog.offsetTop;
+        scroll({
+          top: blogTopPos,
+          behavior: 'smooth'
+        });
+      }
+    }, 300);
 
     getArticlesData().then(data => {
       DateTime.local().setLocale('es-CO');
@@ -46,11 +52,13 @@
           articleId: item.sys.id
         }));
     });
+
+
   });
 </script>
 
-<div class="init-wrapper">
-  <div class="container mx-auto h-screen z-10 relative flex flex-col">
+<div class="relative h-screen">
+  <div class="container mx-auto h-screen z-20 relative flex flex-col">
     <Header></Header>
     <div class="flex flex-grow items-center px-6 d sm:px-20 justify-center sm:justify-start">
       <h1 class="font-thin leading-none text-5xl sm:text-6xl text-white mb-40 tracking-tighter">
@@ -64,7 +72,8 @@
       </h1>
     </div>
   </div>
-  <div class="init-wrapper__image-screen absolute z-0 w-full h-full top-0"></div>
+  <div class="init-wrapper__image-screen absolute z-10 w-full h-full top-0"></div>
+  <img class="absolute z-0 w-full h-full top-0 js-background-image" src="https://picsum.photos/200/300" alt="">
 </div>
 
 <div
@@ -110,12 +119,6 @@
 </div>
 
 <style>
-  .init-wrapper {
-    background: url(https://picsum.photos/200/300);
-    background-size: cover;
-    height: 100vh;
-  }
-
   .init-wrapper__image-screen {
     background-color: rgba(0, 0, 0, .5);
   }

@@ -19,7 +19,10 @@
 
     if (blog != null) {
       const blogTopPos = blog.offsetTop;
-      window.scrollTo(0, blogTopPos);
+      scroll({
+        top: blogTopPos,
+        behavior: 'smooth'
+      });
     } else {
       page('/blog');
     }
@@ -34,7 +37,7 @@
       menuOpened = true;
     }
 
-    btnActive.blog = page.current == '/' || page.current == '/blog' || page.current.indexOf('articulo') != -1;
+    btnActive.blog = page.current.indexOf('articulo') != -1;
     btnActive.aboutMe = page.current == '/acerca-de-mi';
   });
 </script>
