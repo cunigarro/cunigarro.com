@@ -6,6 +6,7 @@
   import Accordion from './../components/Accordion.svelte';
   import Footer from './../components/Footer.svelte';
   import Switch from './../components/Switch.svelte';
+  import SocialNetWorks from './../components/SocialNetWorks.svelte';
   import { darkTheme } from './../store.js';
   import { mdiCheckboxBlankCircle } from '@mdi/js';
   import { DateTime } from 'luxon';
@@ -62,14 +63,17 @@
   <div class="container mx-auto h-screen z-20 relative flex flex-col">
     <Header></Header>
     <div class="flex flex-grow items-center px-6 d sm:px-20 justify-center sm:justify-start">
-      <h1 class="font-thin leading-none text-5xl sm:text-6xl text-white mb-40 tracking-tighter">
+      <h1 class="font-thin leading-none text-5xl sm:text-6xl text-white mb-20 md:mb-12 tracking-tighter">
         Christian
         <br>
         Unigarro
         <svg class="w-2 h-2 sm:w-3 sm:h-3 inline -mb-5 sm:-mb-6 -ml-2 sm:-ml-3 text-white fill-current" viewBox="0 0 24 24">
           <path d={mdiCheckboxBlankCircle} />
         </svg>
-        <hr class="cu-hr w-20 mt-4">
+        <hr class="cu-hr w-20 mt-4 mb-0 md:mb-8">
+        <div class="hidden md:block">
+          <SocialNetWorks></SocialNetWorks>
+        </div>
       </h1>
     </div>
   </div>

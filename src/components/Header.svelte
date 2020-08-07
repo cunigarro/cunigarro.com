@@ -39,7 +39,7 @@
       menuOpened = true;
     }
 
-    btnActive.blog = page.current.indexOf('articulo') != -1;
+    btnActive.blog = page.current == '/' || page.current == '/blog' ||page.current.indexOf('articulo') != -1;
     btnActive.aboutMe = page.current == '/acerca-de-mi';
   });
 </script>
@@ -95,10 +95,16 @@
     left: 50%;
     margin-left: -4px;
     bottom: -12px;
-    content: '';
+    content: none;
     width: 8px;
     height: 8px;
     border-radius: 50%;
     background-color: orange;
+  }
+
+  @media screen and (min-width: 720px) {
+    .btn-menu.active::after {
+      content: '';
+    }
   }
 </style>
