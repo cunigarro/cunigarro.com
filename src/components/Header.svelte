@@ -39,7 +39,7 @@
     </a>
   </div>
   <div class="flex items-center order-first md:order-last">
-    <Switch checked={$darkTheme} on:checked={darkModeAction}></Switch>
+    <Switch on:checked={darkModeAction}></Switch>
     <button
       on:click={toggleMenu}
       class="flex items-center ml-2 -mr-3 text-white block md:hidden"

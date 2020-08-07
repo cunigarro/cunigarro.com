@@ -4,13 +4,17 @@
   import Header from './../components/Header.svelte';
   import Switch from './../components/Switch.svelte';
   import Footer from './../components/Footer.svelte';
-
+  import { darkTheme } from './../store.js';
   import { getArticleData } from './../services/contentfulApi.js';
 
   import showdown from 'showdown';
 
   export let params;
   let article = '';
+
+  function darkModeAction(event) {
+    darkTheme.set(event.detail);
+  }
 
   onMount(() => {
     getArticleData(params.id).then(resp => {
@@ -26,7 +30,7 @@
   <hr class="border-t mb-5">
 
   <div class="flex items-center mb-6 block md:hidden">
-    <Switch></Switch>
+    <Switch on:checked={darkModeAction}></Switch>
     <span class="font-semibold inline-block ml-2">
       Blog
     </span>

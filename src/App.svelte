@@ -38,9 +38,7 @@
   });
 </script>
 
-<div class="app-wrapper">
-  <svelte:component this={page} params={params} />
-</div>
+<svelte:component this={page} params={params} />
 
 <style global>
   @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
@@ -56,12 +54,15 @@
 
   .app-wrapper {
     --body-background: #fff;
+    --font-color: #000;
 
     background-color: var(--body-background);
+    color: var(--font-color);
   }
 
   .dark-theme {
     --body-background: #000;
+    --font-color: #fff;
   }
 
   hr.cu-hr {
