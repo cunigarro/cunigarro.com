@@ -28,14 +28,15 @@
   onMount(() => {
     setTimeout(() => {
       if (page.current == '/blog') {
-        const blog = document.querySelector('#blog');
-        const blogTopPos = blog.offsetTop;
+        const target = document.querySelector('#blog') || document.body;
+        const blogTopPos = target.getBoundingClientRect().top + window.pageYOffset;
+
         scroll({
           top: blogTopPos,
           behavior: 'smooth'
         });
       }
-    }, 300);
+    }, 500);
 
     getArticlesData().then(data => {
       DateTime.local().setLocale('es-CO');

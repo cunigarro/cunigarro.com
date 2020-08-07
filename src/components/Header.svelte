@@ -18,7 +18,9 @@
     const blog = document.querySelector('#blog');
 
     if (blog != null) {
-      const blogTopPos = blog.offsetTop;
+      const target = document.querySelector('#blog') || document.body;
+      const blogTopPos = target.getBoundingClientRect().top + window.pageYOffset;
+
       scroll({
         top: blogTopPos,
         behavior: 'smooth'
