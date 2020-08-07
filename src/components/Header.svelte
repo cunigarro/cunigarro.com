@@ -5,6 +5,10 @@
   import page from 'page';
 
   let menuOpened = false;
+  let btnActive = {
+    aboutMe: false,
+    blog: false
+  }
 
   function toggleMenu() {
     menuOpened = !menuOpened;
@@ -29,6 +33,9 @@
     if (window.outerWidth >= 768 ) {
       menuOpened = true;
     }
+
+    btnActive.blog = page.current == '/' || page.current == '/blog' || page.current.indexOf('articulo') != -1;
+    btnActive.aboutMe = page.current == '/acerca-de-mi';
   });
 </script>
 
@@ -54,13 +61,15 @@
       <div class="text-sm flex-grow flex flex-col md:flex-row flex-no-wrap md:flex-wrap items-end justify-end">
         <button
           on:click|preventDefault="{goToBlog}"
-          class="block mt-4 md:mt-0 text-teal-200 hover:text-white order-first md:order-last mx-0 md:mx-8"
+          class="block mt-4 md:mt-0 text-teal-200 hover:text-white order-first md:order-last mx-0 md:mx-8 btn-menu"
+          class:active = {btnActive.blog}
         >
           Blog
         </button>
         <a
           href="/acerca-de-mi"
-          class="block mt-4 md:mt-0 text-teal-200 hover:text-white"
+          class="block mt-4 md:mt-0 text-teal-200 hover:text-white btn-menu"
+          class:active = {btnActive.aboutMe}
         >
           Acerca de mi
         </a>
@@ -71,4 +80,20 @@
 </nav>
 
 <style>
+  .btn-menu {
+    position: relative;
+  }
+
+  .btn-menu.active::after {
+    display: block;
+    position: absolute;
+    left: 50%;
+    margin-left: -4px;
+    bottom: -12px;
+    content: '';
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: orange;
+  }
 </style>
