@@ -6,18 +6,22 @@
   import Accordion from './../components/Accordion.svelte';
   import Footer from './../components/Footer.svelte';
   import Switch from './../components/Switch.svelte';
-
+  import { darkTheme } from './../store.js';
   import { mdiCheckboxBlankCircle } from '@mdi/js';
   import { DateTime } from 'luxon';
-
   import { getArticlesData } from './../services/contentfulApi.js';
 
   let articles = [];
+  let darkThemeChecked = false;
 
   function openArticlesController(event) {
     articles.forEach((v, i) => {
       articles[i].opened = event.detail.id == i + 1;
     });
+  }
+
+  function darkModeAction(event) {
+    darkTheme.set(event.detail);
   }
 
   onMount(() => {
@@ -72,7 +76,7 @@
   <div class="grid grid-cols-12 mt-0 sm:mt-6">
     <div class="mb-6 col-span-12 md:col-span-4 xl:col-span-3">
       <div class="flex items-center mb-6">
-        <Switch></Switch>
+        <Switch on:checked={darkModeAction}></Switch>
         <span class="font-semibold inline-block ml-2">
           Blog
         </span>

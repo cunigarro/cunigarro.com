@@ -1,6 +1,18 @@
 <script>
-  export let checked = false;
-  export let color = "#2196F3";
+  import { createEventDispatcher } from 'svelte';
+  import { darkTheme } from './../store.js';
+
+  let checked = false;
+
+  const dispatch = createEventDispatcher();
+
+  function select(event) {
+    dispatch('checked', event.currentTarget.checked);
+  }
+
+  darkTheme.subscribe(value => {
+    checked = value;
+  })
 </script>
 
 <style>
@@ -59,6 +71,6 @@
 </style>
 
 <label class="switch">
-  <input type="checkbox" bind:checked />
+  <input type="checkbox" {checked} on:change={select} />
   <span class="slider" />
 </label>

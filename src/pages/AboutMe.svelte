@@ -2,7 +2,12 @@
   import Header from './../components/Header.svelte';
   import Switch from './../components/Switch.svelte';
   import Footer from './../components/Footer.svelte';
+  import { darkTheme } from './../store.js';
   import { mdiCheckboxBlankCircle } from '@mdi/js';
+
+  function darkModeAction(event) {
+    darkTheme.set(event.detail);
+  }
 </script>
 
 <div class="about-me-wrapper mx-auto flex flex-col mb-5">
@@ -28,7 +33,7 @@
   <div class="grid-cols-12 md:grid">
     <div class="col-span-12 md:col-span-4 xl:col-span-3 text-sm">
       <div class="flex items-center mb-6">
-        <Switch></Switch>
+        <Switch on:checked={darkModeAction}></Switch>
         <span class="font-semibold inline-block ml-2">
           Acerca de mi
         </span>

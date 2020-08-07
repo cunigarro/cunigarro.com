@@ -1,6 +1,7 @@
 <script>
   import { onMount } from 'svelte';
   import Switch from './Switch.svelte';
+  import { darkTheme } from './../store.js';
   import page from 'page';
 
   let menuOpened = false;
@@ -20,8 +21,11 @@
     }
   }
 
+  function darkModeAction(event) {
+    darkTheme.set(event.detail);
+  }
+
   onMount(() => {
-    console.log(window.outerWidth);
     if (window.outerWidth >= 768 ) {
       menuOpened = true;
     }
@@ -35,7 +39,7 @@
     </a>
   </div>
   <div class="flex items-center order-first md:order-last">
-    <Switch></Switch>
+    <Switch checked={$darkTheme} on:checked={darkModeAction}></Switch>
     <button
       on:click={toggleMenu}
       class="flex items-center ml-2 -mr-3 text-white block md:hidden"
