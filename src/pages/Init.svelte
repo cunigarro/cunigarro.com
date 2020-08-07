@@ -62,15 +62,25 @@
 <div class="relative h-screen">
   <div class="container mx-auto h-screen z-20 relative flex flex-col">
     <Header></Header>
-    <div class="flex flex-grow items-center px-6 d sm:px-20 justify-center sm:justify-start">
-      <h1 class="font-thin leading-none text-5xl sm:text-6xl text-white mb-20 md:mb-12 tracking-tighter">
+    <div class="flex flex-grow items-center px-4 lg:px-16">
+      <h1 class="font-thin leading-none text-5xl sm:text-6xl text-white mb-20 md:mb-20 w-full">
         Christian
         <br>
         Unigarro
         <svg class="w-2 h-2 sm:w-3 sm:h-3 inline -mb-5 sm:-mb-6 -ml-2 sm:-ml-3 text-white fill-current" viewBox="0 0 24 24">
           <path d={mdiCheckboxBlankCircle} />
         </svg>
-        <hr class="cu-hr w-20 mt-4 mb-0 md:mb-8">
+        <div class="flex justify-between">
+          <hr class="cu-hr w-20 mt-4 mb-0 md:mb-8">
+          <p class="text-xs mt-20 md:mt-5">
+            <span class="text-sm block mb-5">
+              Por qué es importante
+            </span>
+            <a href="/">
+              Ver artículo
+            </a>
+          </p>
+        </div>
         <div class="hidden md:block">
           <SocialNetWorks></SocialNetWorks>
         </div>
