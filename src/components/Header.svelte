@@ -46,7 +46,7 @@
 
 <nav class="flex items-center justify-between flex-wrap px-4 py-6 md:py-12 xl:py-16 relative z-10">
   <div class="flex items-center flex-shrink-0 text-white mr-6 order-first">
-    <a class="text-gray-500" href="/">
+    <a class="text-color" href="/">
       Cunigarro
     </a>
   </div>
@@ -66,14 +66,14 @@
       <div class="text-sm flex-grow flex flex-col md:flex-row flex-no-wrap md:flex-wrap items-end justify-end">
         <button
           on:click|preventDefault="{goToBlog}"
-          class="block mt-4 md:mt-0 text-teal-200 hover:text-white order-first md:order-last mx-0 md:mx-8 btn-menu"
+          class="block mt-4 md:mt-0 text-color order-first md:order-last mx-0 md:mx-8 btn-menu"
           class:active = {btnActive.blog}
         >
           Blog
         </button>
         <a
           href="/acerca-de-mi"
-          class="block mt-4 md:mt-0 text-teal-200 hover:text-white btn-menu"
+          class="block mt-4 md:mt-0 text-color btn-menu"
           class:active = {btnActive.aboutMe}
         >
           Acerca de mi
@@ -93,11 +93,11 @@
     display: block;
     position: absolute;
     left: 50%;
-    margin-left: -4px;
-    bottom: -12px;
+    margin-left: -5px;
+    bottom: -14px;
     content: none;
-    width: 8px;
-    height: 8px;
+    width: 10px;
+    height: 10px;
     border-radius: 50%;
     background-color: orange;
   }

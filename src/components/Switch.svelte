@@ -7,11 +7,11 @@
   const dispatch = createEventDispatcher();
 
   function select(event) {
-    dispatch('checked', event.currentTarget.checked);
+    dispatch('checked', !event.currentTarget.checked);
   }
 
   darkTheme.subscribe(value => {
-    checked = value;
+    checked = !value;
   })
 </script>
 

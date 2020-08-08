@@ -53,16 +53,20 @@
   }
 
   .app-wrapper {
-    --body-background: #fff;
-    --font-color: #000;
+    --body-background: 255, 255, 255;
+    --font-color: 0, 0, 0;
 
-    background-color: var(--body-background);
-    color: var(--font-color);
+    background-color: rgb(var(--body-background));
+    color: rgb(var(--font-color));
   }
 
   .dark-theme {
-    --body-background: #000;
-    --font-color: #fff;
+    --body-background: 0, 0, 0;
+    --font-color: 255, 255, 255;
+  }
+
+  .text-color {
+    color: rgb(var(--font-color));
   }
 
   hr.cu-hr {

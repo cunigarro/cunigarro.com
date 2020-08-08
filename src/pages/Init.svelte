@@ -27,18 +27,6 @@
   }
 
   onMount(() => {
-    setTimeout(() => {
-      if (page.current == '/blog') {
-        const target = document.querySelector('#blog') || document.body;
-        const blogTopPos = target.getBoundingClientRect().top + window.pageYOffset;
-
-        scroll({
-          top: blogTopPos,
-          behavior: 'smooth'
-        });
-      }
-    }, 500);
-
     getArticlesData().then(data => {
       DateTime.local().setLocale('es-CO');
 
@@ -54,8 +42,6 @@
           articleId: item.sys.id
         }));
     });
-
-
   });
 </script>
 
@@ -63,18 +49,18 @@
   <div class="container mx-auto h-screen z-20 relative flex flex-col">
     <Header></Header>
     <div class="flex flex-grow items-center px-4 lg:px-16">
-      <h1 class="font-thin leading-none text-5xl sm:text-6xl text-white mb-20 md:mb-20 w-full">
+      <h1 class="font-thin leading-none text-5xl sm:text-6xl text-white mb-20 md:mb-20 w-full text-color">
         Christian
         <br>
         Unigarro
-        <svg class="w-2 h-2 sm:w-3 sm:h-3 inline -mb-5 sm:-mb-6 -ml-2 sm:-ml-3 text-white fill-current" viewBox="0 0 24 24">
+        <svg class="w-2 h-2 sm:w-3 sm:h-3 inline -mb-5 sm:-mb-6 -ml-2 sm:-ml-3 text-color fill-current" viewBox="0 0 24 24">
           <path d={mdiCheckboxBlankCircle} />
         </svg>
         <div class="flex justify-between">
           <hr class="cu-hr w-20 mt-4 mb-0 md:mb-8">
-          <p class="text-xs mt-20 md:mt-5">
+          <p class="text-xs mt-20 md:mt-8 font-normal">
             <span class="text-sm block mb-5">
-              Por qué es importante
+              ¿Por qué es importante daft punk?
             </span>
             <a href="/">
               Ver artículo
@@ -105,7 +91,7 @@
           Blog
         </span>
       </div>
-      <h2 class="text-2xl font-semibold leading-none">
+      <h2 class="text-2xl font-semibold leading-none font-normal">
         Este es mi blog
         <br>
         de noticias
@@ -135,6 +121,6 @@
 
 <style>
   .init-wrapper__image-screen {
-    background-color: rgba(0, 0, 0, .5);
+    background-color: rgba(var(--body-background), .4);
   }
 </style>
