@@ -84,6 +84,8 @@
 
 </nav>
 
+<span class="hidden btn-menu active"></span>
+
 <style>
   .btn-menu {
     position: relative;
