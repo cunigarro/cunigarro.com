@@ -7,12 +7,12 @@
   import { darkTheme } from './../store.js';
   import { getArticleData } from './../services/contentfulApi.js';
   import articlesStore from './../services/articlesStore.js';
-
+  import page from 'page';
   import showdown from 'showdown';
 
   export let params;
   let articles = [];
-  let article = {};
+  let article;
 
   function darkModeAction(event) {
     darkTheme.set(event.detail);
@@ -22,11 +22,15 @@
     articles = articlesStore.getArticles();
     article = articles.find(art => art.articleSlug === params.slug);
 
-    getArticleData(article.articleId).then(resp => {
-      const converter = new showdown.Converter();
-      article = resp;
-      article.fields.body = converter.makeHtml(resp.fields.body);
-    });
+    if (article !== undefined) {
+      getArticleData(article.articleId).then(resp => {
+        const converter = new showdown.Converter();
+        article = resp;
+        article.fields.body = converter.makeHtml(resp.fields.body);
+      });
+    } else {
+      page.redirect('/error-400');
+    }
   });
 </script>
 <div class="container px-4 mx-auto">
@@ -41,7 +45,7 @@
     </span>
   </div>
   <h2 class="text-2xl font-semibold leading-none mb-6">
-    {#if article.fields}
+    {#if article && article.fields}
       {article.fields.title}
     {/if}
   </h2>
@@ -60,7 +64,7 @@
     </div>
     <div class="col-span-12 md:col-span-8 xl:col-span-9">
       <div class="-mb-3 article text-sm md:text-base pb-0 md:pb-8">
-        {#if article.fields}
+        {#if article && article.fields}
           {@html article.fields.body}
         {/if}
       </div>

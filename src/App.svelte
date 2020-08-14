@@ -18,6 +18,8 @@
 
   router('/', () => page = Init);
   router('/blog', () => page = Init);
+  router('/acerca-de-mi', () => page = AboutMe);
+  router('/error-400', () => page = ErrorPage);
   router(
     '/articulo/:slug',
     (ctx, next) => {
@@ -27,7 +29,6 @@
     },
     () => page = Article
   );
-  router('/acerca-de-mi', () => page = AboutMe);
   router('/*', () => page = ErrorPage);
 
   onMount(() => {
