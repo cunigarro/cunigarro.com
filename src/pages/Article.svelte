@@ -6,18 +6,23 @@
   import Footer from './../components/Footer.svelte';
   import { darkTheme } from './../store.js';
   import { getArticleData } from './../services/contentfulApi.js';
+  import articlesStore from './../services/articlesStore.js';
 
   import showdown from 'showdown';
 
   export let params;
-  let article = '';
+  let articles = [];
+  let article = {};
 
   function darkModeAction(event) {
     darkTheme.set(event.detail);
   }
 
   onMount(() => {
-    getArticleData(params.id).then(resp => {
+    articles = articlesStore.getArticles();
+    article = articles.find(art => art.articleSlug === params.slug);
+
+    getArticleData(article.articleId).then(resp => {
       const converter = new showdown.Converter();
       article = resp;
       article.fields.body = converter.makeHtml(resp.fields.body);

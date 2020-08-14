@@ -3,6 +3,12 @@
   import Article from './pages/Article.svelte';
   import ErrorPage from './pages/ErrorPage.svelte';
   import AboutMe from './pages/AboutMe.svelte';
+  import {
+    getArticlesData,
+    getAssetsData
+  } from './services/contentfulApi.js';
+  import articlesStore from './services/articlesStore.js';
+  import { DateTime } from 'luxon';
   import { onMount } from 'svelte';
   import { darkTheme } from './store.js';
   import router from 'page';
@@ -13,8 +19,9 @@
   router('/', () => page = Init);
   router('/blog', () => page = Init);
   router(
-    '/articulo/:id',
+    '/articulo/:slug',
     (ctx, next) => {
+      console.log(ctx);
       params = ctx.params
       next()
     },
@@ -22,8 +29,6 @@
   );
   router('/acerca-de-mi', () => page = AboutMe);
   router('/*', () => page = ErrorPage);
-
-  router.start();
 
   onMount(() => {
     darkTheme.subscribe(darkTheme => {
@@ -34,6 +39,34 @@
       } else {
         appWrapper.classList.remove('dark-theme');
       }
+    });
+
+    getArticlesData().then(data => {
+      DateTime.local().setLocale('es-CO');
+      let articles = data.items
+        .filter(item => item.sys.contentType.sys.id === 'blogPost')
+        .map((item, i) => ({
+          name: item.fields.title,
+          date: DateTime.fromISO(item.fields.publishDate, {setZone: true}).toLocaleString({month: 'long', day: '2-digit'}),
+          category: 'Web',
+          imageUrl: '',
+          resume: item.fields.description,
+          opened: i === 0,
+          articleId: item.sys.id,
+          articleSlug: item.fields.slug
+        }));
+
+      getAssetsData().then(assets => {
+        articles = assets.items.map((asset, i) => {
+          return {
+            ...articles[i],
+            imageUrl: `https:${asset.fields.file.url}`
+          };
+        });
+
+        articlesStore.setArticles(articles);
+        router.start();
+      });
     });
   });
 </script>

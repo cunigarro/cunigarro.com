@@ -6,6 +6,7 @@ const headers = new Headers({
 });
 
 const getArticlesUrl = `${environment.ctfulDeliveryApiUrl}/spaces/${environment.ctfulSpaceId}/environments/${environment.ctfulEnv}/entries`;
+const getAssetsUrl = `${environment.ctfulDeliveryApiUrl}/spaces/${environment.ctfulSpaceId}/environments/${environment.ctfulEnv}/assets`;
 
 function getArticlesData() {
   return fetch(getArticlesUrl, {
@@ -29,7 +30,31 @@ function getArticleData(articleId) {
   });
 }
 
+function getAssetsData() {
+  return fetch(getAssetsUrl, {
+    method: 'GET',
+    headers
+  }).then(resp => {
+    return resp.json();
+  }).then(resp => {
+    return resp;
+  });
+}
+
+function getAssetData(assetId) {
+  return fetch(`${getAssetsUrl}/${assetId}`, {
+    method: 'GET',
+    headers
+  }).then(resp => {
+    return resp.json();
+  }).then(resp => {
+    return resp;
+  });
+}
+
 export {
   getArticlesData,
-  getArticleData
+  getArticleData,
+  getAssetsData,
+  getAssetData
 }

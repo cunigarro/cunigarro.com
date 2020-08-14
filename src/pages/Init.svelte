@@ -9,8 +9,7 @@
   import SocialNetWorks from './../components/SocialNetWorks.svelte';
   import { darkTheme } from './../store.js';
   import { mdiCheckboxBlankCircle } from '@mdi/js';
-  import { DateTime } from 'luxon';
-  import { getArticlesData } from './../services/contentfulApi.js';
+  import articlesStore from './../services/articlesStore.js';
   import page from 'page';
 
   let articles = [];
@@ -27,21 +26,7 @@
   }
 
   onMount(() => {
-    getArticlesData().then(data => {
-      DateTime.local().setLocale('es-CO');
-
-      articles = data.items
-        .filter(item => item.sys.contentType.sys.id === 'blogPost')
-        .map((item, i) => ({
-          name: item.fields.title,
-          date: DateTime.fromISO(item.fields.publishDate, {setZone: true}).toLocaleString({month: 'long', day: '2-digit'}),
-          category: 'Web',
-          imageUrl: 'https://picsum.photos/200/300',
-          resume: item.fields.description,
-          opened: i === 0,
-          articleId: item.sys.id
-        }));
-    });
+    articles = articlesStore.getArticles();
   });
 </script>
 
@@ -110,7 +95,7 @@
           imageUrl={article.imageUrl}
           resume={article.resume}
           open={article.opened}
-          articleId={article.articleId}
+          articleSlug={article.articleSlug}
           on:opened={openArticlesController}
         ></Accordion>
       {/each}

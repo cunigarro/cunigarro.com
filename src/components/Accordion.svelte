@@ -3,7 +3,7 @@
   const dispatch = createEventDispatcher();
 
   export let id;
-  export let articleId;
+  export let articleSlug;
   export let name;
   export let date;
   export let category;
@@ -77,7 +77,7 @@
           {resume}
         </p>
         <p class="mb-0 text-sm text-right">
-          <a href="/articulo/{articleId}">
+          <a href="/articulo/{articleSlug}">
             Ir a artículo
           </a>
         </p>
