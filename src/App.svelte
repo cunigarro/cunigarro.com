@@ -23,7 +23,6 @@
   router(
     '/articulo/:slug',
     (ctx, next) => {
-      console.log(ctx);
       params = ctx.params
       next()
     },
@@ -47,10 +46,11 @@
       let articles = data.items
         .filter(item => item.sys.contentType.sys.id === 'blogPost')
         .map((item, i) => ({
-          name: item.fields.title,
+          title: item.fields.title,
           date: DateTime.fromISO(item.fields.publishDate, {setZone: true}).toLocaleString({month: 'long', day: '2-digit'}),
           category: 'Web',
           imageUrl: '',
+          body: '',
           resume: item.fields.description,
           opened: i === 0,
           articleId: item.sys.id,

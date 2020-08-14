@@ -4,7 +4,7 @@
 
   export let id;
   export let articleSlug;
-  export let name;
+  export let title;
   export let date;
   export let category;
   export let imageUrl;
@@ -52,7 +52,7 @@
     <div class="col-span-12 sm:col-span-8 xl:col-span-9">
       <div class="flex items-center {open ? 'mb-4' : ''}">
         <h2 class="text-lg font-semibold flex-grow">
-          {name}
+          {title}
         </h2>
 
         <button

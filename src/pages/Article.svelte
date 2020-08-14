@@ -25,8 +25,7 @@
     if (article !== undefined) {
       getArticleData(article.articleId).then(resp => {
         const converter = new showdown.Converter();
-        article = resp;
-        article.fields.body = converter.makeHtml(resp.fields.body);
+        article.body = converter.makeHtml(resp.fields.body);
       });
     } else {
       page.redirect('/error-400');
@@ -45,11 +44,11 @@
     </span>
   </div>
   <h2 class="text-2xl font-semibold leading-none mb-6">
-    {#if article && article.fields}
-      {article.fields.title}
+    {#if article}
+      {article.title}
     {/if}
   </h2>
-  <img class="w-full h-48 mb-4 object-cover mb-6 rounded-lg lg:rounded-none" src="https://picsum.photos/200/300" alt="">
+  <img class="w-full h-48 mb-4 object-cover mb-6 rounded-lg lg:rounded-none" src={article ? article.imageUrl: ''} alt="">
   <div class="grid-cols-12 hidden md:grid">
     <div class="col-span-12 md:col-span-4 xl:col-span-3 text-sm">
       Jun 1 - por Christian Unigarro
@@ -64,8 +63,8 @@
     </div>
     <div class="col-span-12 md:col-span-8 xl:col-span-9">
       <div class="-mb-3 article text-sm md:text-base pb-0 md:pb-8">
-        {#if article && article.fields}
-          {@html article.fields.body}
+        {#if article}
+          {@html article.body}
         {/if}
       </div>
       <div class="block md:hidden">

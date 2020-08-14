@@ -89,7 +89,7 @@
       {#each articles as article, index}
         <Accordion
           id={index + 1}
-          name={article.name}
+          title={article.title}
           date={article.date}
           category={article.category}
           imageUrl={article.imageUrl}
