@@ -44,12 +44,12 @@
         <div class="flex justify-between">
           <hr class="cu-hr w-20 mt-4 mb-0 md:mb-8">
           <p class="text-xs mt-20 md:mt-8 font-normal">
-            <span class="text-sm block mb-5">
+            <span class="text-sm block mb-5 text-background py-1 px-2">
               {#if articles.length > 0}
                 {articles[0].title}
               {/if}
             </span>
-            <a href="/post/{articles.length > 0 ? articles[0].articleSlug : ''}">
+            <a class="text-background py-1 px-2" href="/post/{articles.length > 0 ? articles[0].articleSlug : ''}">
               Go to post
             </a>
           </p>
@@ -68,7 +68,7 @@
   id="blog"
   class="container mx-auto px-4 pt-8"
 >
-  <Tags></Tags>
+  <!-- <Tags></Tags> -->
 
   <div class="grid grid-cols-12 mt-0 sm:mt-6">
     <div class="mb-6 col-span-12 md:col-span-4 xl:col-span-3">
@@ -109,5 +109,9 @@
 <style>
   .init-wrapper__image-screen {
     background-color: rgba(var(--body-background), .4);
+  }
+
+  .text-background {
+    background-color: rgba(var(--body-background), .6);
   }
 </style>

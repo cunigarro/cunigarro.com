@@ -55,8 +55,8 @@
       {#if article}
         {article.date}
       {/if} - by Christian Unigarro
-      <br>
-      Innovación
+      <!-- <br>
+      Innovación -->
     </div>
   </div>
 
