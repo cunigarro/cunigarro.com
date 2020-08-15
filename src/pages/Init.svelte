@@ -45,7 +45,9 @@
           <hr class="cu-hr w-20 mt-4 mb-0 md:mb-8">
           <p class="text-xs mt-20 md:mt-8 font-normal">
             <span class="text-sm block mb-5">
-              ¿Why Daft Punk is so important?
+              {#if articles.length > 0}
+                {articles[0].title}
+              {/if}
             </span>
             <a href="/">
               Go to post
@@ -59,7 +61,7 @@
     </div>
   </div>
   <div class="init-wrapper__image-screen absolute z-10 w-full h-full top-0"></div>
-  <img class="absolute z-0 w-full h-full top-0 js-background-image" src="https://picsum.photos/200/300" alt="">
+  <img class="absolute z-0 w-full h-full top-0 js-background-image" src={articles.length > 0 ? articles[0].imageUrl : ''} alt="">
 </div>
 
 <div
