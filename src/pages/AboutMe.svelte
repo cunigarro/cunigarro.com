@@ -35,13 +35,13 @@
       <div class="flex items-center mb-6">
         <Switch on:checked={darkModeAction}></Switch>
         <span class="font-semibold inline-block ml-2">
-          Acerca de mi
+          About me
         </span>
       </div>
-      <h2 class="text-2xl font-semibold leading-none mb-10 md:mb-16">
-        Hola
+      <h2 class="text-2xl font-semibold leading-6 mb-10 md:mb-16">
+        Hi
         <br>
-        soy Christian
+        I'm Christian
       </h2>
     </div>
   </div>

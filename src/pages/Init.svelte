@@ -45,10 +45,10 @@
           <hr class="cu-hr w-20 mt-4 mb-0 md:mb-8">
           <p class="text-xs mt-20 md:mt-8 font-normal">
             <span class="text-sm block mb-5">
-              ¿Por qué es importante daft punk?
+              ¿Why Daft Punk is so important?
             </span>
             <a href="/">
-              Ver artículo
+              Go to post
             </a>
           </p>
         </div>
@@ -76,10 +76,10 @@
           Blog
         </span>
       </div>
-      <h2 class="text-2xl font-semibold leading-none font-normal">
-        Este es mi blog
+      <h2 class="text-2xl font-semibold leading-6 font-normal">
+        This is my
         <br>
-        de noticias
+        blog
       </h2>
     </div>
   </div>

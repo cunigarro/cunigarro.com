@@ -39,8 +39,8 @@
       menuOpened = true;
     }
 
-    btnActive.blog = page.current == '/' || page.current == '/blog' ||page.current.indexOf('articulo') != -1;
-    btnActive.aboutMe = page.current == '/acerca-de-mi';
+    btnActive.blog = page.current == '/' || page.current == '/blog' ||page.current.indexOf('post') != -1;
+    btnActive.aboutMe = page.current == '/about-me';
   });
 </script>
 
@@ -72,11 +72,11 @@
           Blog
         </button>
         <a
-          href="/acerca-de-mi"
+          href="/about-me"
           class="block mt-4 md:mt-0 text-color btn-menu"
           class:active = {btnActive.aboutMe}
         >
-          Acerca de mi
+          About me
         </a>
       </div>
     {/if}

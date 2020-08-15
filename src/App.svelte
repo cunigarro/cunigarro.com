@@ -18,10 +18,10 @@
 
   router('/', () => page = Init);
   router('/blog', () => page = Init);
-  router('/acerca-de-mi', () => page = AboutMe);
+  router('/about-me', () => page = AboutMe);
   router('/error-400', () => page = ErrorPage);
   router(
-    '/articulo/:slug',
+    '/post/:slug',
     (ctx, next) => {
       params = ctx.params
       next()
@@ -42,12 +42,11 @@
     });
 
     getArticlesData().then(data => {
-      DateTime.local().setLocale('es-CO');
       let articles = data.items
         .filter(item => item.sys.contentType.sys.id === 'blogPost')
         .map((item, i) => ({
           title: item.fields.title,
-          date: DateTime.fromISO(item.fields.publishDate, {setZone: true}).toLocaleString({month: 'long', day: '2-digit'}),
+          date: DateTime.fromISO(item.fields.publishDate).setLocale('en').toLocaleString({month: 'long', day: '2-digit'}),
           category: 'Web',
           imageUrl: '',
           body: '',

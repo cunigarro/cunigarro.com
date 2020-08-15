@@ -77,7 +77,7 @@
           {resume}
         </p>
         <p class="mb-0 text-sm text-right">
-          <a href="/articulo/{articleSlug}">
+          <a href="/post/{articleSlug}">
             Ir a artículo
           </a>
         </p>
