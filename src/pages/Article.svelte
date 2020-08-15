@@ -29,6 +29,8 @@
     } else {
       page.redirect('/error-400');
     }
+
+    scroll(0,0);
   });
 </script>
 <div class="container px-4 mx-auto">

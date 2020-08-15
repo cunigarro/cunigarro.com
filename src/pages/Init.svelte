@@ -49,7 +49,7 @@
                 {articles[0].title}
               {/if}
             </span>
-            <a href="/">
+            <a href="/post/{articles.length > 0 ? articles[0].articleSlug : ''}">
               Go to post
             </a>
           </p>

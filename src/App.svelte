@@ -56,7 +56,8 @@
           resume: item.fields.description,
           opened: i === 0,
           articleId: item.sys.id,
-          articleSlug: item.fields.slug
+          articleSlug: item.fields.slug,
+          tags: item.fields.tags
         }));
 
       let profile = data.items
