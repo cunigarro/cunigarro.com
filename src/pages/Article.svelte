@@ -1,6 +1,5 @@
 <script>
   import { onMount } from 'svelte';
-
   import Header from './../components/Header.svelte';
   import Switch from './../components/Switch.svelte';
   import Footer from './../components/Footer.svelte';

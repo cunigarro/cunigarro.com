@@ -1,5 +1,6 @@
 const articlesStore = () => {
   let articles = [];
+  let profile = {};
 
   function setArticles(data) {
     articles = data;
@@ -9,9 +10,19 @@ const articlesStore = () => {
     return articles;
   }
 
+  function setProfile(data) {
+    profile = data;
+  }
+
+  function getProfile() {
+    return profile;
+  }
+
   return {
     setArticles,
-    getArticles
+    getArticles,
+    setProfile,
+    getProfile
   }
 }
 

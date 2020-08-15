@@ -11,6 +11,7 @@
   import { DateTime } from 'luxon';
   import { onMount } from 'svelte';
   import { darkTheme } from './store.js';
+  import showdown from 'showdown';
   import router from 'page';
 
   let page;
@@ -42,6 +43,8 @@
     });
 
     getArticlesData().then(data => {
+      const converter = new showdown.Converter();
+
       let articles = data.items
         .filter(item => item.sys.contentType.sys.id === 'blogPost')
         .map((item, i) => ({
@@ -56,6 +59,13 @@
           articleSlug: item.fields.slug
         }));
 
+      let profile = data.items
+        .filter(item => item.sys.contentType.sys.id === 'profile')
+        .map((item, i) => ({
+          title: item.fields.title,
+          body: converter.makeHtml(item.fields.body)
+        }))[0];
+
       getAssetsData().then(assets => {
         articles = assets.items.map((asset, i) => {
           return {
@@ -65,6 +75,7 @@
         });
 
         articlesStore.setArticles(articles);
+        articlesStore.setProfile(profile);
         router.start();
       });
     });

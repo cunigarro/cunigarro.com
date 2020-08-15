@@ -1,13 +1,21 @@
 <script>
+  import { onMount } from 'svelte';
   import Header from './../components/Header.svelte';
   import Switch from './../components/Switch.svelte';
   import Footer from './../components/Footer.svelte';
+  import articlesStore from './../services/articlesStore.js';
   import { darkTheme } from './../store.js';
   import { mdiCheckboxBlankCircle } from '@mdi/js';
+
+  let profile;
 
   function darkModeAction(event) {
     darkTheme.set(event.detail);
   }
+
+  onMount(() => {
+    profile = articlesStore.getProfile();
+  });
 </script>
 
 <div class="about-me-wrapper mx-auto flex flex-col mb-5">
@@ -39,9 +47,9 @@
         </span>
       </div>
       <h2 class="text-2xl font-semibold leading-6 mb-10 md:mb-16">
-        Hi
-        <br>
-        I'm Christian
+        {#if profile}
+          {@html profile.title}
+        {/if}
       </h2>
     </div>
   </div>
@@ -52,15 +60,9 @@
     </div>
     <div class="col-span-12 md:col-span-8 xl:col-span-9">
       <div class="-mb-3 article text-sm md:text-base pb-0 md:pb-8">
-        <p class="text-sm mb-3">
-          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Natus neque perferendis, dolorum saepe ipsum hic fugiat corrupti, ipsa atque molestiae, nulla recusandae corporis deleniti omnis aperiam vitae accusamus nesciunt. Corrupti?
-        </p>
-        <p class="text-sm mb-3">
-          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Natus neque perferendis, dolorum saepe ipsum hic fugiat corrupti, ipsa atque molestiae, nulla recusandae corporis deleniti omnis aperiam vitae accusamus nesciunt. Corrupti?
-        </p>
-        <p class="text-sm mb-3">
-          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Natus neque perferendis, dolorum saepe ipsum hic fugiat corrupti, ipsa atque molestiae, nulla recusandae corporis deleniti omnis aperiam vitae accusamus nesciunt. Corrupti?
-        </p>
+        {#if profile}
+          {@html profile.body}
+        {/if}
       </div>
       <div class="block md:hidden">
         <Footer></Footer>
