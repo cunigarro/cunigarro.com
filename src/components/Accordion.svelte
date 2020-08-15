@@ -78,7 +78,7 @@
         </p>
         <p class="mb-0 text-sm text-right">
           <a href="/post/{articleSlug}">
-            Ir a artículo
+            Go to post
           </a>
         </p>
       {/if}
