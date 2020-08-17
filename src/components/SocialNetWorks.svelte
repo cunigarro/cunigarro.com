@@ -4,7 +4,7 @@
   import {
     mdiInstagram,
     mdiTwitter,
-    mdiLinkedin
+    mdiGithub
   } from '@mdi/js';
 </script>
 
@@ -21,9 +21,9 @@
     </svg>
   </a>
 
-  <a class="text-color" href="https://www.linkedin.com/in/christian-unigarro-6755b921/" target="_blank">
+  <a class="text-color" href="https://github.com/cunigarro" target="_blank">
     <svg class="w-8 h-8 mx-2" viewBox="0 0 24 24">
-      <path fill="currentColor" d={mdiLinkedin} />
+      <path fill="currentColor" d={mdiGithub} />
     </svg>
   </a>
 </div>
