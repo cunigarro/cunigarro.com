@@ -49,8 +49,11 @@
                 {articles[0].title}
               {/if}
             </span>
-            <a class="text-background py-1 px-2" href="/post/{articles.length > 0 ? articles[0].articleSlug : ''}">
-              Go to post
+            <a class="text-background py-1 px-2 inline-flex items-center" href="/post/{articles.length > 0 ? articles[0].articleSlug : ''}">
+              <span class="mr-3">
+                Go to post
+              </span>
+              <img src="/static/images/goto-post-arrow.png" alt="">
             </a>
           </p>
         </div>
@@ -61,7 +64,7 @@
     </div>
   </div>
   <div class="init-wrapper__image-screen absolute z-10 w-full h-full top-0"></div>
-  <img class="absolute z-0 w-full h-full top-0 js-background-image" src={articles.length > 0 ? articles[0].imageUrl : ''} alt="">
+  <img class="absolute z-0 w-full h-full top-0 init-wrapper__image" src={articles.length > 0 ? articles[0].imageUrl : ''} alt="">
 </div>
 
 <div
@@ -113,5 +116,9 @@
 
   .text-background {
     background-color: rgba(var(--body-background), .6);
+  }
+
+  .init-wrapper__image {
+    object-fit: cover;
   }
 </style>

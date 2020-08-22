@@ -47,7 +47,8 @@
 <nav class="flex items-center justify-between flex-wrap px-4 py-6 md:py-12 xl:py-16 relative z-10">
   <div class="flex items-center flex-shrink-0 text-white mr-6 order-first">
     <a class="text-color" href="/">
-      Cunigarro
+      <img class="hidden sm:inline-block" src="/static/images/desktop-logotype.png" alt="Cunigarro Logotype">
+      <img class="inline-block sm:hidden" src="/static/images/mobile-logotype.png" alt="Cunigarro Logotype">
     </a>
   </div>
   <div class="flex items-center order-first md:order-last">
