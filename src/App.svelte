@@ -100,7 +100,7 @@
 
   .app-wrapper {
     --body-background: 255, 255, 255;
-    --font-color: 0, 0, 0;
+    --font-color: 45, 49, 71;
 
     background-color: rgb(var(--body-background));
     color: rgb(var(--font-color));
@@ -115,14 +115,15 @@
     color: rgb(var(--font-color));
   }
 
-  hr.cu-hr {
+  .cu-hr {
     width: 80px;
-    border-bottom: 2px solid orange;
+    background: linear-gradient(90deg, rgba(228,115,57,1) 0%, rgba(222,188,26,1) 100%);
+    height: 2px;
     border-top: 0;
   }
 
   @media screen and (min-width: 540px) {
-    hr.cu-hr {
+    .cu-hr {
       width: 115px;
     }
   }

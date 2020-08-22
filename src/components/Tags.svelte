@@ -1,5 +1,5 @@
 <div class="flex items-start sm:items-center flex-col sm:flex-row">
-  <hr class="cu-hr mt-4 sm:mt-0 mb-6 sm:mb-0 order-1 sm:order-none">
+  <div class="cu-hr mt-4 sm:mt-0 mb-6 sm:mb-0 order-1 sm:order-none"></div>
   <div class="flex flex-col items-start sm:items-end flex-grow">
     <p class="mb-1 block sm:hidden font-semibold">
       Tags

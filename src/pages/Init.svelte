@@ -43,7 +43,7 @@
         </svg>
         <div class="flex justify-between">
           <div>
-            <hr class="cu-hr w-20 mt-4 mb-4">
+            <div class="cu-hr w-20 mt-4 mb-4"></div>
             <p class="text-base sm:text-xl mb-0 md:mb-8 font-light">
               Frontend Developer
             </p>
@@ -121,7 +121,7 @@
   }
 
   .text-background {
-    background-color: rgba(var(--body-background), .6);
+    background-color: rgba(var(--body-background), .4);
   }
 
   .init-wrapper__image {

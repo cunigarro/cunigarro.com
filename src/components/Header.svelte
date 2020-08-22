@@ -44,11 +44,10 @@
   });
 </script>
 
-<nav class="flex items-center justify-between flex-wrap px-4 py-6 md:py-12 xl:py-16 relative z-10">
+<nav class="flex items-center justify-between flex-wrap px-0 xl:px-4 py-6 md:py-12 xl:py-16 relative z-10">
   <div class="flex items-center flex-shrink-0 text-white mr-6 order-first">
     <a class="text-color" href="/">
-      <img class="hidden sm:inline-block" src="/static/images/desktop-logotype.png" alt="Cunigarro Logotype">
-      <img class="inline-block sm:hidden" src="/static/images/mobile-logotype.png" alt="Cunigarro Logotype">
+      <img class="w-32 h-auto inline-block -mb-3" src="/static/images/logotype.png" alt="Cunigarro Logotype">
     </a>
   </div>
   <div class="flex items-center order-first md:order-last">
@@ -57,7 +56,7 @@
       on:click={toggleMenu}
       class="flex items-center ml-2 -mr-3 text-white block md:hidden"
     >
-      <svg class="w-8 h-8" viewBox="0 0 24 24">
+      <svg class="w-8 h-8 text-color" viewBox="0 0 24 24">
         <path fill="currentColor" d="M12,16A2,2 0 0,1 14,18A2,2 0 0,1 12,20A2,2 0 0,1 10,18A2,2 0 0,1 12,16M12,10A2,2 0 0,1 14,12A2,2 0 0,1 12,14A2,2 0 0,1 10,12A2,2 0 0,1 12,10M12,4A2,2 0 0,1 14,6A2,2 0 0,1 12,8A2,2 0 0,1 10,6A2,2 0 0,1 12,4Z" />
       </svg>
     </button>
@@ -102,7 +101,7 @@
     width: 10px;
     height: 10px;
     border-radius: 50%;
-    background-color: orange;
+    background: linear-gradient(90deg, rgba(228,115,57,1) 0%, rgba(222,188,26,1) 100%);
   }
 
   @media screen and (min-width: 720px) {
