@@ -42,16 +42,22 @@
           <path d={mdiCheckboxBlankCircle} />
         </svg>
         <div class="flex justify-between">
-          <hr class="cu-hr w-20 mt-4 mb-0 md:mb-8">
-          <p class="text-xs mt-20 md:mt-8 font-normal">
-            <span class="text-sm block mb-5 text-background py-1 px-2">
-              {#if articles.length > 0}
-                {articles[0].title}
-              {/if}
-            </span>
+          <div>
+            <hr class="cu-hr w-20 mt-4 mb-4">
+            <p class="text-base sm:text-xl mb-0 md:mb-8 font-light">
+              Frontend Developer
+            </p>
+          </div>
+          <p class="text-sm mt-20 md:mt-8 py-2 font-normal">
             <a class="text-background py-1 px-2 inline-flex items-center" href="/post/{articles.length > 0 ? articles[0].articleSlug : ''}">
               <span class="mr-3">
-                Go to post
+                <span class="hidden sm:inline">
+                  Go to the last
+                </span>
+                <span class="inline sm:hidden">
+                  Last
+                </span>
+                post
               </span>
               <img src="/static/images/goto-post-arrow.png" alt="">
             </a>

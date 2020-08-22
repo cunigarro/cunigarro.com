@@ -68,7 +68,8 @@
         }))[0];
 
       getAssetsData().then(assets => {
-        articles = assets.items.map((asset, i) => {
+        const imagesItems = assets.items.reverse();
+        articles = imagesItems.map((asset, i) => {
           return {
             ...articles[i],
             imageUrl: `https:${asset.fields.file.url}`
