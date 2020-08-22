@@ -33,11 +33,11 @@
         class="block {open ? 'cursor-default' : 'cursor-pointer'}"
       >
         {#if open}
-          <svg class="w-6 h-6" viewBox="0 0 24 24">
+          <svg class="w-6 h-6 text-orange" viewBox="0 0 24 24">
             <path fill="currentColor" d="M19,13H5V11H19V13Z" />
           </svg>
         {:else}
-          <svg class="w-6 h-6" viewBox="0 0 24 24">
+          <svg class="w-6 h-6 text-orange" viewBox="0 0 24 24">
             <path fill="currentColor" d="M19,13H13V19H11V13H5V11H11V5H13V11H19V13Z" />
           </svg>
         {/if}
@@ -60,11 +60,11 @@
           class="hidden sm:block {open ? 'cursor-default' : 'cursor-pointer'}"
         >
           {#if open}
-            <svg class="w-6 h-6" viewBox="0 0 24 24">
+            <svg class="w-6 h-6 text-orange" viewBox="0 0 24 24">
               <path fill="currentColor" d="M19,13H5V11H19V13Z" />
             </svg>
           {:else}
-            <svg class="w-6 h-6" viewBox="0 0 24 24">
+            <svg class="w-6 h-6 text-orange" viewBox="0 0 24 24">
               <path fill="currentColor" d="M19,13H13V19H11V13H5V11H11V5H13V11H19V13Z" />
             </svg>
           {/if}
@@ -77,7 +77,7 @@
           {resume}
         </p>
         <p class="mb-0 text-sm text-right">
-          <a href="/post/{articleSlug}">
+          <a class="text-orange no-underline hover:underline" href="/post/{articleSlug}">
             Go to post
           </a>
         </p>

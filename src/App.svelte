@@ -107,7 +107,7 @@
   }
 
   .dark-theme {
-    --body-background: 0, 0, 0;
+    --body-background: 45, 49, 71;
     --font-color: 255, 255, 255;
   }
 
