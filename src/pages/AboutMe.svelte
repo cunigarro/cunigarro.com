@@ -54,7 +54,7 @@
     </div>
   </div>
 
-  <div  class="grid grid-cols-12 items-center">
+  <div  class="grid grid-cols-12 items-center mb-6">
     <div class="col-span-12 md:col-span-4 xl:col-span-3 hidden md:block">
       <Footer></Footer>
     </div>
