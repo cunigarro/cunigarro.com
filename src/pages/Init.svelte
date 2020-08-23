@@ -88,10 +88,10 @@
       </h1>
       <div class="text-center self-end w-full">
         <div
-          class="inline-block p-2 cursor-pointer"
+          class="inline-block px-2 cursor-pointer"
           on:click={goToBlog}
         >
-          <svg class="w-5 h-5 text-light-orange mb-2" viewBox="0 0 24 24">
+          <svg class="w-5 h-5 text-light-orange" viewBox="0 0 24 24">
             <path fill="currentColor" d={mdiChevronDown} />
           </svg>
         </div>
