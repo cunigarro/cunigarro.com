@@ -95,7 +95,7 @@
     </div>
   </div>
 
-  <div  class="grid grid-cols-12">
+  <div  class="grid grid-cols-12 mb-6">
     <div class="col-start-1 md:col-start-5 xl:col-start-4 col-end-13">
       {#each articles as article, index}
         <Accordion
