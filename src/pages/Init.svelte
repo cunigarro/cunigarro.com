@@ -8,7 +8,10 @@
   import Switch from './../components/Switch.svelte';
   import SocialNetWorks from './../components/SocialNetWorks.svelte';
   import { darkTheme } from './../store.js';
-  import { mdiCheckboxBlankCircle } from '@mdi/js';
+  import {
+    mdiCheckboxBlankCircle,
+    mdiChevronDown
+  } from '@mdi/js';
   import articlesStore from './../services/articlesStore.js';
   import page from 'page';
 
@@ -25,6 +28,22 @@
     darkTheme.set(event.detail);
   }
 
+  function goToBlog() {
+    const blog = document.querySelector('#blog');
+
+    if (blog != null) {
+      const target = document.querySelector('#blog') || document.body;
+      const blogTopPos = target.getBoundingClientRect().top + window.pageYOffset;
+
+      scroll({
+        top: blogTopPos,
+        behavior: 'smooth'
+      });
+    } else {
+      page('/blog');
+    }
+  }
+
   onMount(() => {
     articles = articlesStore.getArticles();
   });
@@ -33,8 +52,8 @@
 <div class="relative h-screen">
   <div class="container mx-auto h-screen z-20 relative flex flex-col">
     <Header dynamicColor={false}></Header>
-    <div class="flex flex-grow items-center px-4 lg:px-16">
-      <h1 class="font-thin leading-none text-5xl sm:text-6xl text-white mb-20 md:mb-20 w-full">
+    <div class="flex flex-wrap flex-grow items-center px-4 lg:px-16">
+      <h1 class="font-thin leading-none text-5xl sm:text-6xl text-white w-full mt-12">
         Christian
         <br>
         Unigarro
@@ -67,6 +86,16 @@
           <SocialNetWorks></SocialNetWorks>
         </div>
       </h1>
+      <div class="text-center self-end w-full">
+        <div
+          class="inline-block p-2 cursor-pointer"
+          on:click={goToBlog}
+        >
+          <svg class="w-5 h-5 text-light-orange mb-2" viewBox="0 0 24 24">
+            <path fill="currentColor" d={mdiChevronDown} />
+          </svg>
+        </div>
+      </div>
     </div>
   </div>
   <div class="init-wrapper__image-screen absolute z-10 w-full h-full top-0"></div>
