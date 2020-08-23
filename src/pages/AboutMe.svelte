@@ -20,7 +20,7 @@
 
 <div class="about-me-wrapper mx-auto flex flex-col mb-5">
   <div class="container flex-grow flex flex-col flex-grow mx-auto z-10">
-    <Header></Header>
+    <Header dynamicColor={true}></Header>
     <div class="flex sm:hidden flex-grow mb-16 items-center px-6 d sm:px-20 justify-center sm:justify-start">
       <h1 class="font-thin leading-none text-5xl sm:text-6xl text-white tracking-tighter">
         Christian

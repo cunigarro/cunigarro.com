@@ -32,13 +32,13 @@
 
 <div class="relative h-screen">
   <div class="container mx-auto h-screen z-20 relative flex flex-col">
-    <Header></Header>
+    <Header dynamicColor={false}></Header>
     <div class="flex flex-grow items-center px-4 lg:px-16">
-      <h1 class="font-thin leading-none text-5xl sm:text-6xl text-white mb-20 md:mb-20 w-full text-color">
+      <h1 class="font-thin leading-none text-5xl sm:text-6xl text-white mb-20 md:mb-20 w-full">
         Christian
         <br>
         Unigarro
-        <svg class="w-2 h-2 sm:w-3 sm:h-3 inline -mb-5 sm:-mb-6 -ml-2 sm:-ml-3 text-color fill-current" viewBox="0 0 24 24">
+        <svg class="w-2 h-2 sm:w-3 sm:h-3 inline -mb-5 sm:-mb-6 -ml-2 sm:-ml-3 fill-current" viewBox="0 0 24 24">
           <path d={mdiCheckboxBlankCircle} />
         </svg>
         <div class="flex justify-between">
@@ -117,11 +117,7 @@
 
 <style>
   .init-wrapper__image-screen {
-    background-color: rgba(var(--body-background), .4);
-  }
-
-  .text-background {
-    background-color: rgba(var(--body-background), .4);
+    background-color: rgba(45, 49, 71, .4);
   }
 
   .init-wrapper__image {

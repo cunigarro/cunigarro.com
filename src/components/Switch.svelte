@@ -49,15 +49,14 @@
     width: 14px;
     left: 2px;
     bottom: 2px;
-    background-color: #fff;
+    background-color: #2d3147;
     -webkit-transition: 0.4s;
     transition: 0.4s;
     border-radius: 50%;
-    translate: all .4s;
   }
 
   .slider--dark:before {
-    background-color: #2d3147;
+    background-color: #fff;
   }
 
   /* input:checked + .slider {

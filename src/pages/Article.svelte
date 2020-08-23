@@ -34,7 +34,7 @@
   });
 </script>
 <div class="container px-4 mx-auto">
-  <Header></Header>
+  <Header dynamicColor={true}></Header>
 
   <hr class="border-t mb-5">
 
