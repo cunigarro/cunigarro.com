@@ -53,7 +53,7 @@
   <div class="container mx-auto h-screen z-20 relative flex flex-col">
     <Header dynamicColor={false}></Header>
     <div class="flex flex-wrap flex-grow items-center px-4 lg:px-16">
-      <h1 class="font-thin leading-none text-5xl sm:text-6xl text-white w-full mt-12">
+      <h1 class="font-thin leading-none text-5xl sm:text-6xl text-white w-full mt-16">
         Christian
         <br>
         Unigarro
@@ -69,7 +69,7 @@
           </div>
           <p class="text-sm mt-20 md:mt-8 py-2 font-normal">
             <a class="py-1 px-2 inline-flex items-center" href="/blog/{articles.length > 0 ? articles[0].articleSlug : ''}">
-              <span class="mr-3">
+              <span class="mr-3 no-underline hover:underline">
                 <span class="hidden sm:inline">
                   Go to the last
                 </span>
@@ -88,7 +88,7 @@
       </h1>
       <div class="text-center self-end w-full">
         <div
-          class="inline-block px-2 cursor-pointer"
+          class="inline-block px-2 py-1 cursor-pointer"
           on:click={goToBlog}
         >
           <svg class="w-5 h-5 text-light-orange" viewBox="0 0 24 24">

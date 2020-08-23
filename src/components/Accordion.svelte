@@ -77,8 +77,11 @@
           {resume}
         </p>
         <p class="mb-0 text-sm text-right">
-          <a class="text-orange no-underline hover:underline" href="/blog/{articleSlug}">
-            Go to post
+          <a class="no-underline hover:underline inline-flex items-center" href="/blog/{articleSlug}">
+            <span class="mr-3">
+              Go to post
+            </span>
+            <img class="w-6 h-auto" src="/static/images/goto-post-arrow.png" alt="">
           </a>
         </p>
       {/if}
