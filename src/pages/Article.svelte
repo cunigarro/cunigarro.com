@@ -33,11 +33,13 @@
     scroll(0,0);
   });
 </script>
-<div class="container px-4 mx-auto">
+
+<div class="container mx-auto">
   <Header dynamicColor={true}></Header>
-
   <hr class="border-t mb-5">
+</div>
 
+<div class="container mx-auto px-4">
   <div class="flex items-center mb-6 block md:hidden">
     <Switch on:checked={darkModeAction}></Switch>
     <span class="font-semibold inline-block ml-2">

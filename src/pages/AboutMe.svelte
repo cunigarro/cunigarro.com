@@ -38,7 +38,7 @@
 </div>
 
 <div class="container mx-auto px-4">
-  <div class="grid-cols-12 md:grid">
+  <div class="grid grid-cols-12 md:grid">
     <div class="col-span-12 md:col-span-4 xl:col-span-3 text-sm">
       <div class="flex items-center mb-6">
         <Switch on:checked={darkModeAction}></Switch>

@@ -68,7 +68,7 @@
             </p>
           </div>
           <p class="text-sm mt-20 md:mt-8 py-2 font-normal">
-            <a class="py-1 px-2 inline-flex items-center" href="/post/{articles.length > 0 ? articles[0].articleSlug : ''}">
+            <a class="py-1 px-2 inline-flex items-center" href="/blog/{articles.length > 0 ? articles[0].articleSlug : ''}">
               <span class="mr-3">
                 <span class="hidden sm:inline">
                   Go to the last

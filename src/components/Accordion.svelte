@@ -77,7 +77,7 @@
           {resume}
         </p>
         <p class="mb-0 text-sm text-right">
-          <a class="text-orange no-underline hover:underline" href="/post/{articleSlug}">
+          <a class="text-orange no-underline hover:underline" href="/blog/{articleSlug}">
             Go to post
           </a>
         </p>

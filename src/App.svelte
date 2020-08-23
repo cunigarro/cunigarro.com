@@ -22,7 +22,7 @@
   router('/about-me', () => page = AboutMe);
   router('/error-400', () => page = ErrorPage);
   router(
-    '/post/:slug',
+    '/blog/:slug',
     (ctx, next) => {
       params = ctx.params
       next()
