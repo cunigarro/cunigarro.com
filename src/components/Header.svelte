@@ -43,8 +43,6 @@
 
     btnActive.blog = page.current == '/' || page.current == '/blog' ||page.current.indexOf('post') != -1;
     btnActive.aboutMe = page.current == '/about-me';
-
-    console.log(dynamicColor);
   });
 </script>
 
