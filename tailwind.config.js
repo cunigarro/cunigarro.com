@@ -12,5 +12,8 @@ module.exports = {
         'light-orange': '#debc1a'
       }
     }
+  },
+  future: {
+    removeDeprecatedGapUtilities: true,
   }
 }

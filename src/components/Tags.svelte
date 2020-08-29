@@ -9,7 +9,7 @@
         Tags
       </p>
       <p class="text-xs">
-        <a class="inline sm:block" href="">
+        <a class="inline sm:block" href="/">
           <span class="hidden sm:inline">
             -
           </span>
@@ -18,7 +18,7 @@
         <span class="inline sm:hidden">
           /
         </span>
-        <a class="inline sm:block" href="">
+        <a class="inline sm:block" href="/">
           <span class="hidden sm:inline">
             -
           </span>
@@ -27,7 +27,7 @@
         <span class="inline sm:hidden">
           /
         </span>
-        <a class="inline sm:block" href="">
+        <a class="inline sm:block" href="/">
           <span class="hidden sm:inline">
             -
           </span>
@@ -36,7 +36,7 @@
         <span class="inline sm:hidden">
           /
         </span>
-        <a class="inline sm:block" href="">
+        <a class="inline sm:block" href="/">
           <span class="hidden sm:inline">
             -
           </span>
