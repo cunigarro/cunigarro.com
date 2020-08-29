@@ -8,6 +8,8 @@
   import articlesStore from './../services/articlesStore.js';
   import page from 'page';
   import showdown from 'showdown';
+  import hljs from 'highlight.js/lib/core';
+  import javascript from 'highlight.js/lib/languages/javascript';
 
   export let params;
   let articles = [];
@@ -29,6 +31,14 @@
     } else {
       page.redirect('/error-400');
     }
+
+    hljs.registerLanguage('javascript', javascript);
+
+    setTimeout(() => {
+      document.querySelectorAll('pre code').forEach((block) => {
+        hljs.highlightBlock(block);
+      });
+    }, 800);
 
     scroll(0,0);
   });
@@ -53,7 +63,7 @@
   </h2>
   <img class="w-full h-48 mb-4 object-cover mb-6 rounded-lg lg:rounded-none" src={article ? article.imageUrl: ''} alt="">
   <div class="grid-cols-12 hidden md:grid">
-    <div class="col-span-12 md:col-span-4 xl:col-span-3 text-sm">
+    <div class="col-span-12 md:col-span-4 xl:col-span-3 text-sm mb-10 md:mb-16">
       {#if article}
         {article.date}
       {/if} - by Christian Unigarro
@@ -88,9 +98,25 @@
     @apply text-xl font-semibold mb-2;
   }
 
+  :global(.article h3) {
+    @apply text-lg font-semibold mb-2;
+  }
+
   :global(.article ul) {
     list-style-type: disc;
     list-style-position: inside;
+    margin-bottom: 1rem;
+  }
+
+  :global(.article pre) {
+    @apply my-4;
+  }
+
+  :global(.article ol) {
+    list-style-type: decimal;
+    list-style-position: inside;
+    padding-left: 0;
+    margin-bottom: 1rem;
   }
 
   :global(.article ul li) {
