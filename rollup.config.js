@@ -7,8 +7,6 @@ import sveltePreprocess from 'svelte-preprocess';
 
 const production = !process.env.ROLLUP_WATCH;
 
-console.log(production);
-
 export default {
 	input: 'src/main.js',
 	output: {
