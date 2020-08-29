@@ -5,7 +5,8 @@
   import AboutMe from './pages/AboutMe.svelte';
   import {
     getArticlesData,
-    getAssetsData
+    getAssetsData,
+    getAssetData
   } from './services/contentfulApi.js';
   import articlesStore from './services/articlesStore.js';
   import { DateTime } from 'luxon';
@@ -45,13 +46,15 @@
     getArticlesData().then(data => {
       const converter = new showdown.Converter();
 
+      const assets = data.includes.Asset;
+
       let articles = data.items
         .filter(item => item.sys.contentType.sys.id === 'blogPost')
         .map((item, i) => ({
           title: item.fields.title,
           date: DateTime.fromISO(item.fields.publishDate).setLocale('en').toLocaleString({month: 'long', day: '2-digit'}),
           category: 'Web',
-          imageUrl: '',
+          imageUrl: `https:${assets[i].fields.file.url}`,
           body: '',
           resume: item.fields.description,
           opened: i === 0,
@@ -67,7 +70,11 @@
           body: converter.makeHtml(item.fields.body)
         }))[0];
 
-      getAssetsData().then(assets => {
+      articlesStore.setArticles(articles);
+      articlesStore.setProfile(profile);
+      router.start();
+
+      /* getAssetsData().then(assets => {
         const imagesItems = assets.items.reverse();
         articles = imagesItems.map((asset, i) => {
           return {
@@ -79,7 +86,7 @@
         articlesStore.setArticles(articles);
         articlesStore.setProfile(profile);
         router.start();
-      });
+      }); */
     });
   });
 </script>
