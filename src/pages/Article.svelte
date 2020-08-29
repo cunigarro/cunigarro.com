@@ -80,6 +80,10 @@
 </div>
 
 <style>
+  :global(.article) {
+    line-height: 30px;
+  }
+
   :global(.article p) {
     margin-bottom: .75rem;
   }
