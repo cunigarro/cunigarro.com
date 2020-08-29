@@ -46,11 +46,11 @@
       Blog
     </span>
   </div>
-  <h1 class="text-2xl font-semibold leading-none mb-6">
+  <h2 class="text-2xl font-semibold leading-none mb-6">
     {#if article}
       {article.title}
     {/if}
-  </h1>
+  </h2>
   <img class="w-full h-48 mb-4 object-cover mb-6 rounded-lg lg:rounded-none" src={article ? article.imageUrl: ''} alt="">
   <div class="grid-cols-12 hidden md:grid">
     <div class="col-span-12 md:col-span-4 xl:col-span-3 text-sm">
@@ -80,24 +80,12 @@
 </div>
 
 <style>
-  :global(.article) {
-    line-height: 30px;
-  }
-
   :global(.article p) {
     margin-bottom: .75rem;
   }
 
-  :global(.article h1) {
-    @apply text-2xl;
-  }
-
   :global(.article h2) {
-    @apply text-xl;
-  }
-
-  :global(.article h3) {
-    @apply text-lg;
+    @apply text-xl font-semibold mb-2;
   }
 
   :global(.article ul) {
