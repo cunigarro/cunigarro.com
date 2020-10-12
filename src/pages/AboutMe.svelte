@@ -18,6 +18,14 @@
   });
 </script>
 
+<svelte:head>
+  <title>About me | Cunigarro | Frontend Developer</title>
+  <meta name="description" content="About me" />
+
+  <meta property="og:title" content="About me | Cunigarro | Frontend Developer" />
+  <meta property="og:description" content="About the author" />
+</svelte:head>
+
 <div class="about-me-wrapper mx-auto flex flex-col mb-5">
   <div class="container flex-grow flex flex-col flex-grow mx-auto z-10">
     <Header dynamicColor={true}></Header>

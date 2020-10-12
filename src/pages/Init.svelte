@@ -49,6 +49,14 @@
   });
 </script>
 
+<svelte:head>
+  <title>Cunigarro | Frontend Developer</title>
+  <meta name="description" content="Blog about Frontend Development" />
+
+  <meta property="og:title" content="Cunigarro | Frontend Developer" />
+  <meta property="og:description" content="About the author" />
+</svelte:head>
+
 <div class="relative h-screen">
   <div class="container mx-auto h-screen z-20 relative flex flex-col">
     <Header dynamicColor={false}></Header>

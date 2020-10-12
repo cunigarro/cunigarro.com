@@ -46,11 +46,13 @@
 
 <svelte:head>
   {#if article}
-    <title>
-      {article.title} | Cunigarro | Frontend Developer
-    </title>
-
+    <title>{article.title} | Cunigarro | Frontend Developer</title>
     <meta name="description" content={article.resume} />
+
+    <meta property="og:title" content={article.title} />
+    <meta property="og:image" content={article.imageUrl} />
+    <meta property="og:description" content={article.resume} />
+    <meta property="og:url" content="https://www.cunigarro.com/blog/{article.articleSlug}" />
   {/if}
 </svelte:head>
 
