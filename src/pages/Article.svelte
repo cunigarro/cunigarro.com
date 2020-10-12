@@ -44,6 +44,16 @@
   });
 </script>
 
+<svelte:head>
+  {#if article}
+    <title>
+      {article.title} | Cunigarro | Frontend Developer
+    </title>
+
+    <meta name="description" content={article.resume} />
+  {/if}
+</svelte:head>
+
 <div class="container mx-auto">
   <Header dynamicColor={true}></Header>
   <hr class="border-t mb-5">
