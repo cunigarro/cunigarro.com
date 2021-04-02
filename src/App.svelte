@@ -46,7 +46,7 @@
     getArticlesData().then(data => {
       const converter = new showdown.Converter();
 
-      const assets = data.includes.Asset;
+      const assets = data.includes.Asset.reverse();
 
       let articles = data.items
         .filter(item => item.sys.contentType.sys.id === 'blogPost')
@@ -57,7 +57,7 @@
           imageUrl: `https:${assets[i].fields.file.url}`,
           body: '',
           resume: item.fields.description,
-          opened: i === 0,
+          opened: false,
           articleId: item.sys.id,
           articleSlug: item.fields.slug,
           tags: item.fields.tags
@@ -70,7 +70,12 @@
           body: converter.makeHtml(item.fields.body)
         }))[0];
 
-      articlesStore.setArticles(articles);
+      articles = articles.map((article, i) => ({
+        ...article,
+        opened: i === articles.length - 1
+      }));
+
+      articlesStore.setArticles(articles.reverse());
       articlesStore.setProfile(profile);
       router.start();
 
