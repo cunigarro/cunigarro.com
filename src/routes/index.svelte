@@ -9,6 +9,11 @@
     mdiCheckboxBlankCircle,
     mdiChevronDown
   } from '@mdi/js';
+  import { onMount } from 'svelte';
+
+  onMount(() => {
+
+  });
 </script>
 
 <div class="relative h-screen">
