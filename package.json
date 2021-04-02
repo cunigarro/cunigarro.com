@@ -2,7 +2,7 @@
   "name": "cunigarro.com",
   "version": "1.0.0",
   "scripts": {
-    "build": "rollup -c",
+    "build": "rollup -c && aws s3 rm s3://cunigarro.com/ --recursive && aws s3 cp ./public s3://cunigarro.com/ --recursive --acl public-read",
     "dev": "rollup -c -w",
     "start": "sirv public --single"
   },
