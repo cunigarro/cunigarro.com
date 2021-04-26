@@ -11,6 +11,8 @@
   } from '@mdi/js';
   import { onMount } from 'svelte';
 
+  let articles = [];
+
   onMount(() => {
 
   });
