@@ -21,6 +21,7 @@
   router('/', () => page = Init);
   router('/blog', () => page = Init);
   router('/about-me', () => page = AboutMe);
+  router('/portfolio', () => page = false);
   router('/error-400', () => page = ErrorPage);
   router(
     '/blog/:slug',
