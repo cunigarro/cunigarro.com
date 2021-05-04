@@ -88,10 +88,19 @@
           href="/about-me"
           class:text-color={dynamicColor}
           class:text-white={!dynamicColor}
-          class="block mt-4 md:mt-0 btn-menu"
+          class="block mt-4 md:mt-0 btn-menu mx-0 md:mx-8"
           class:active = {btnActive.aboutMe}
         >
           About me
+        </a>
+        <a
+          href="/portfolio"
+          target="_blank"
+          class:text-color={dynamicColor}
+          class:text-white={!dynamicColor}
+          class="block mt-4 md:mt-0 btn-menu mx-0 md:mx-8"
+        >
+          Portfolio
         </a>
       </div>
     {/if}
