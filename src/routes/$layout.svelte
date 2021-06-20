@@ -4,8 +4,8 @@
   import '../global.css';
 </script>
 
-<Header></Header>
+<!-- <Header></Header> -->
 
 <slot></slot>
 
-<Footer></Footer>
+<!-- <Footer></Footer> -->

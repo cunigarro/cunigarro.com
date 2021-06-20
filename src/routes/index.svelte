@@ -5,6 +5,7 @@
   import Footer from '$lib/Footer.svelte';
   import Switch from '$lib/Switch.svelte';
   import SocialNetWorks from '$lib/SocialNetWorks.svelte';
+
 	import {
     mdiCheckboxBlankCircle,
     mdiChevronDown
@@ -16,11 +17,29 @@
   onMount(() => {
 
   });
+
+  function darkModeAction(event) {
+    return ''
+  }
+
+  function goToBlog() {
+    const blog = document.querySelector('#blog');
+    if (blog != null) {
+      const target = document.querySelector('#blog') || document.body;
+      const blogTopPos = target.getBoundingClientRect().top + window.pageYOffset;
+      scroll({
+        top: blogTopPos,
+        behavior: 'smooth'
+      });
+    } else {
+      // api.path = '/blog';
+    }
+  }
 </script>
 
 <div class="relative h-screen">
   <div class="container mx-auto h-screen z-20 relative flex flex-col">
-    <!-- <Header dynamicColor={false}></Header> -->
+    <Header dynamicColor={false}></Header>
     <div class="flex flex-wrap flex-grow items-center px-4 lg:px-16">
       <h1 class="font-thin leading-none text-5xl sm:text-6xl text-white w-full mt-16">
         Christian
